@@ -7,3 +7,5 @@ rules to try to come up with a specific pattern of characters. This is a prime e
 looking for an excuse to write a program!
 
 Written in Delphi 1, still compiles in Delphi 2010.
+
+Now branching to other languages!
