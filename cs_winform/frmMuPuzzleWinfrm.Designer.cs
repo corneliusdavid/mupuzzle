@@ -49,6 +49,7 @@
             // 
             this.btnPrev.Enabled = false;
             this.btnPrev.Location = new System.Drawing.Point(128, 12);
+            this.btnPrev.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(75, 23);
             this.btnPrev.TabIndex = 0;
@@ -60,6 +61,7 @@
             // 
             this.btnOK.Enabled = false;
             this.btnOK.Location = new System.Drawing.Point(209, 12);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 1;
@@ -69,7 +71,8 @@
             // btnCancel
             // 
             this.btnCancel.Enabled = false;
-            this.btnCancel.Location = new System.Drawing.Point(290, 12);
+            this.btnCancel.Location = new System.Drawing.Point(291, 12);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 2;
@@ -80,6 +83,7 @@
             // 
             this.btnNext.Enabled = false;
             this.btnNext.Location = new System.Drawing.Point(371, 12);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(75, 23);
             this.btnNext.TabIndex = 3;
@@ -93,7 +97,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 17);
+            this.label1.Size = new System.Drawing.Size(89, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Current String:";
             // 
@@ -101,27 +105,30 @@
             // 
             this.MuStr.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.MuStr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MuStr.Location = new System.Drawing.Point(12, 55);
             this.MuStr.Name = "MuStr";
-            this.MuStr.Size = new System.Drawing.Size(625, 69);
+            this.MuStr.Size = new System.Drawing.Size(709, 69);
             this.MuStr.TabIndex = 5;
             this.MuStr.Text = "MMUIIUIUIUU";
             // 
             // lbMuStrs
             // 
-            this.lbMuStrs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbMuStrs.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lbMuStrs.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMuStrs.FormattingEnabled = true;
             this.lbMuStrs.ItemHeight = 16;
-            this.lbMuStrs.Location = new System.Drawing.Point(15, 189);
+            this.lbMuStrs.Location = new System.Drawing.Point(0, 235);
+            this.lbMuStrs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbMuStrs.Name = "lbMuStrs";
-            this.lbMuStrs.Size = new System.Drawing.Size(622, 148);
+            this.lbMuStrs.Size = new System.Drawing.Size(733, 260);
             this.lbMuStrs.TabIndex = 6;
             // 
             // btnRule1
             // 
-            this.btnRule1.Location = new System.Drawing.Point(247, 133);
+            this.btnRule1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRule1.Location = new System.Drawing.Point(247, 179);
+            this.btnRule1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRule1.Name = "btnRule1";
             this.btnRule1.Size = new System.Drawing.Size(75, 23);
             this.btnRule1.TabIndex = 7;
@@ -131,7 +138,9 @@
             // 
             // btnRule2
             // 
-            this.btnRule2.Location = new System.Drawing.Point(247, 162);
+            this.btnRule2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRule2.Location = new System.Drawing.Point(247, 208);
+            this.btnRule2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRule2.Name = "btnRule2";
             this.btnRule2.Size = new System.Drawing.Size(75, 23);
             this.btnRule2.TabIndex = 8;
@@ -142,7 +151,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(80, 136);
+            this.label2.Location = new System.Drawing.Point(80, 181);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(161, 17);
             this.label2.TabIndex = 9;
@@ -152,7 +161,8 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 165);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(12, 211);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(229, 17);
             this.label3.TabIndex = 10;
@@ -162,7 +172,8 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(409, 165);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(409, 211);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(189, 17);
             this.label4.TabIndex = 14;
@@ -171,7 +182,8 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(409, 139);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(409, 185);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(135, 17);
             this.label5.TabIndex = 13;
@@ -179,7 +191,9 @@
             // 
             // btnRule4
             // 
-            this.btnRule4.Location = new System.Drawing.Point(328, 162);
+            this.btnRule4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRule4.Location = new System.Drawing.Point(328, 208);
+            this.btnRule4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRule4.Name = "btnRule4";
             this.btnRule4.Size = new System.Drawing.Size(75, 23);
             this.btnRule4.TabIndex = 12;
@@ -189,7 +203,9 @@
             // 
             // btnRule3
             // 
-            this.btnRule3.Location = new System.Drawing.Point(328, 133);
+            this.btnRule3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRule3.Location = new System.Drawing.Point(328, 179);
+            this.btnRule3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRule3.Name = "btnRule3";
             this.btnRule3.Size = new System.Drawing.Size(75, 23);
             this.btnRule3.TabIndex = 11;
@@ -201,7 +217,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(649, 347);
+            this.ClientSize = new System.Drawing.Size(733, 495);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnRule4);
@@ -217,6 +233,9 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.btnPrev);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MinimumSize = new System.Drawing.Size(700, 400);
             this.Name = "frmMUPuzzle";
             this.Text = "MU Puzzle Explorer";
             this.ResumeLayout(false);
