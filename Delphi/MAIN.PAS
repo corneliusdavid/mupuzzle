@@ -20,7 +20,6 @@ type
     Rule4Lbl: TLabel;
     MyMuStrListBox: TListBox;
     PrevStrsLbl: TLabel;
-    ExitBtn: TBitBtn;
     GoalLbl: TLabel;
     GoalStrLbl: TLabel;
     MuStr: TLabel;
