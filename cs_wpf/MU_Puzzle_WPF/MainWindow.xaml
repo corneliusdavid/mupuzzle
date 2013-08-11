@@ -1,0 +1,13 @@
+﻿<Window x:Class="MU_Puzzle_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="521.912" Width="525">
+    <Grid>
+        <ListBox Height="231" Margin="5,0" Width="507" VerticalAlignment="Bottom"/>
+        <Label Content="Current String:" HorizontalAlignment="Left" Margin="21,31,0,0" VerticalAlignment="Top" Width="95"/>
+        <Label Content="MI" Margin="10,65,10,0" VerticalAlignment="Top" Width="472" Height="89"/>
+        <Label Content="Goal String:" HorizontalAlignment="Left" Margin="21,196,0,0" VerticalAlignment="Top" Width="95"/>
+        <Label Content="MU" HorizontalAlignment="Left" Margin="39,218,0,0" VerticalAlignment="Top" Width="36" FontWeight="Bold"/>
+
+    </Grid>
+</Window>
