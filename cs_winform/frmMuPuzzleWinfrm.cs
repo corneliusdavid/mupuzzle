@@ -130,9 +130,41 @@ namespace MU_Puzzle_WinForm
             }
         }
 
+        private void DeleteUU(int StartPos)
+        {
+            WorkStr = WorkStr.Remove(StartPos, 2);
+        }
+
         private void StartDeleteUU()
         {
-            MessageBox.Show("rule 4 not yet finished");
+            // delete an occurance of UU
+
+            int count = 0;
+
+            // first, count how many occurances of UU exist
+            for (int i = 0; WorkStr.Substring(i).Length >= 2; i++)
+                if (WorkStr.Substring(i).StartsWith("UU"))
+                    count++;
+
+            // none?  just show a message 
+            if (count == 0)
+                MessageBox.Show("There is no occurance of 'UU' in the current string.");
+            else
+            {
+                // just 1? then just replace it
+                if (count == 1)
+                    DeleteUU(WorkStr.IndexOf("UU"));
+                else
+                {
+                    // it looks like we'll have to let the user select which occurance
+                    RuleMode = RuleModes.Rule4;
+                    ActivateSelectButtons(true);
+                    ActivateRuleButtons(false);
+                    SelectorPos = -1;
+                    NextSelector();
+                }
+                UpdateMuStr();
+            }
         }
 
         private void LaunchRule(int RuleNum)
@@ -220,8 +252,7 @@ namespace MU_Puzzle_WinForm
             if (RuleMode == RuleModes.Rule3)
                 Replace3IWithU(SelectorPos);
             else
-
-                WorkStr.Remove(SelectorPos, 2);
+                DeleteUU(SelectorPos);
 
             CancelRuleMode();
         }
