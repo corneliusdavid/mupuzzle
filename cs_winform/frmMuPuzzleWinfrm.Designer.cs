@@ -44,13 +44,15 @@
             this.btnRule4 = new System.Windows.Forms.Button();
             this.btnRule3 = new System.Windows.Forms.Button();
             this.lblSelect = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnPrev
             // 
             this.btnPrev.Image = global::MU_Puzzle_WinForm.Properties.Resources._56;
             this.btnPrev.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrev.Location = new System.Drawing.Point(165, 24);
+            this.btnPrev.Location = new System.Drawing.Point(198, 25);
             this.btnPrev.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(75, 27);
@@ -65,7 +67,7 @@
             // 
             this.btnOK.Image = global::MU_Puzzle_WinForm.Properties.Resources.OK__2_;
             this.btnOK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOK.Location = new System.Drawing.Point(246, 24);
+            this.btnOK.Location = new System.Drawing.Point(279, 25);
             this.btnOK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 27);
@@ -80,7 +82,7 @@
             // 
             this.btnCancel.Image = global::MU_Puzzle_WinForm.Properties.Resources.Cancel;
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancel.Location = new System.Drawing.Point(328, 24);
+            this.btnCancel.Location = new System.Drawing.Point(361, 25);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 27);
@@ -95,7 +97,7 @@
             // 
             this.btnNext.Image = global::MU_Puzzle_WinForm.Properties.Resources._57;
             this.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNext.Location = new System.Drawing.Point(408, 24);
+            this.btnNext.Location = new System.Drawing.Point(441, 25);
             this.btnNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(75, 27);
@@ -109,10 +111,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 38);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 13);
+            this.label1.Size = new System.Drawing.Size(85, 15);
             this.label1.TabIndex = 4;
             this.label1.Text = "Current String:";
             // 
@@ -120,10 +122,10 @@
             // 
             this.MuStr.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.MuStr.Font = new System.Drawing.Font("Lucida Sans Typewriter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MuStr.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MuStr.Location = new System.Drawing.Point(12, 55);
             this.MuStr.Name = "MuStr";
-            this.MuStr.Size = new System.Drawing.Size(709, 88);
+            this.MuStr.Size = new System.Drawing.Size(660, 88);
             this.MuStr.TabIndex = 5;
             this.MuStr.Text = "MMUIIUIUIUU";
             // 
@@ -135,17 +137,17 @@
             this.lbMuStrs.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMuStrs.FormattingEnabled = true;
             this.lbMuStrs.ItemHeight = 16;
-            this.lbMuStrs.Location = new System.Drawing.Point(0, 235);
+            this.lbMuStrs.Location = new System.Drawing.Point(0, 251);
             this.lbMuStrs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbMuStrs.Name = "lbMuStrs";
-            this.lbMuStrs.Size = new System.Drawing.Size(733, 260);
+            this.lbMuStrs.Size = new System.Drawing.Size(684, 244);
             this.lbMuStrs.TabIndex = 6;
             this.lbMuStrs.DoubleClick += new System.EventHandler(this.lbMuStrs_DoubleClick);
             // 
             // btnRule1
             // 
             this.btnRule1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRule1.Location = new System.Drawing.Point(247, 179);
+            this.btnRule1.Location = new System.Drawing.Point(280, 183);
             this.btnRule1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRule1.Name = "btnRule1";
             this.btnRule1.Size = new System.Drawing.Size(75, 23);
@@ -157,7 +159,7 @@
             // btnRule2
             // 
             this.btnRule2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRule2.Location = new System.Drawing.Point(247, 208);
+            this.btnRule2.Location = new System.Drawing.Point(280, 212);
             this.btnRule2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRule2.Name = "btnRule2";
             this.btnRule2.Size = new System.Drawing.Size(75, 23);
@@ -169,7 +171,7 @@
             // lblRule1
             // 
             this.lblRule1.AutoSize = true;
-            this.lblRule1.Location = new System.Drawing.Point(80, 181);
+            this.lblRule1.Location = new System.Drawing.Point(113, 185);
             this.lblRule1.Name = "lblRule1";
             this.lblRule1.Size = new System.Drawing.Size(161, 17);
             this.lblRule1.TabIndex = 9;
@@ -180,7 +182,7 @@
             // 
             this.lblRule2.AutoSize = true;
             this.lblRule2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRule2.Location = new System.Drawing.Point(12, 211);
+            this.lblRule2.Location = new System.Drawing.Point(45, 215);
             this.lblRule2.Name = "lblRule2";
             this.lblRule2.Size = new System.Drawing.Size(229, 17);
             this.lblRule2.TabIndex = 10;
@@ -191,7 +193,7 @@
             // 
             this.lblRule4.AutoSize = true;
             this.lblRule4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRule4.Location = new System.Drawing.Point(409, 211);
+            this.lblRule4.Location = new System.Drawing.Point(442, 215);
             this.lblRule4.Name = "lblRule4";
             this.lblRule4.Size = new System.Drawing.Size(189, 17);
             this.lblRule4.TabIndex = 14;
@@ -201,7 +203,7 @@
             // 
             this.lblRule3.AutoSize = true;
             this.lblRule3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRule3.Location = new System.Drawing.Point(409, 185);
+            this.lblRule3.Location = new System.Drawing.Point(442, 189);
             this.lblRule3.Name = "lblRule3";
             this.lblRule3.Size = new System.Drawing.Size(135, 17);
             this.lblRule3.TabIndex = 13;
@@ -210,7 +212,7 @@
             // btnRule4
             // 
             this.btnRule4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRule4.Location = new System.Drawing.Point(328, 208);
+            this.btnRule4.Location = new System.Drawing.Point(361, 212);
             this.btnRule4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRule4.Name = "btnRule4";
             this.btnRule4.Size = new System.Drawing.Size(75, 23);
@@ -222,7 +224,7 @@
             // btnRule3
             // 
             this.btnRule3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRule3.Location = new System.Drawing.Point(328, 179);
+            this.btnRule3.Location = new System.Drawing.Point(361, 183);
             this.btnRule3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRule3.Name = "btnRule3";
             this.btnRule3.Size = new System.Drawing.Size(75, 23);
@@ -234,18 +236,40 @@
             // lblSelect
             // 
             this.lblSelect.AutoSize = true;
-            this.lblSelect.Location = new System.Drawing.Point(283, 5);
+            this.lblSelect.Location = new System.Drawing.Point(316, 6);
             this.lblSelect.Name = "lblSelect";
             this.lblSelect.Size = new System.Drawing.Size(55, 17);
             this.lblSelect.TabIndex = 15;
             this.lblSelect.Text = "Select: ";
             this.lblSelect.Visible = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 145);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 15);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Goal String:";
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(12, 161);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 13);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "MU";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmMUPuzzle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(733, 495);
+            this.ClientSize = new System.Drawing.Size(684, 495);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblSelect);
             this.Controls.Add(this.lblRule4);
             this.Controls.Add(this.lblRule3);
@@ -291,6 +315,8 @@
         private System.Windows.Forms.Button btnRule4;
         private System.Windows.Forms.Button btnRule3;
         private System.Windows.Forms.Label lblSelect;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 

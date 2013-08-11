@@ -93,7 +93,12 @@ namespace MU_Puzzle_WinForm
             UpdateMuStr();
         }
 
-        private void Replace3IWithU()
+        private void Replace3IWithU(int StartPos)
+        {
+            WorkStr = WorkStr.Substring(0, StartPos) + "U" + WorkStr.Substring(StartPos + 3);
+        }
+
+        private void StartReplace3IWithU()
         {
             // replace an occurance of III with U
 
@@ -111,7 +116,7 @@ namespace MU_Puzzle_WinForm
             {
                 // just 1? then just replace it
                 if (count == 1)
-                    WorkStr.Replace("III", "U");
+                    Replace3IWithU(WorkStr.IndexOf("III"));
                 else
                 {
                     // it looks like we'll have to let the user select which occurance
@@ -125,6 +130,11 @@ namespace MU_Puzzle_WinForm
             }
         }
 
+        private void StartDeleteUU()
+        {
+            MessageBox.Show("rule 4 not yet finished");
+        }
+
         private void LaunchRule(int RuleNum)
         {
             switch (RuleNum)
@@ -136,10 +146,10 @@ namespace MU_Puzzle_WinForm
                     DuplicateStr();
                     break;
                 case 3:
-                    Replace3IWithU();
+                    StartReplace3IWithU();
                     break;
                 case 4:
-                    MessageBox.Show("rule 4 not yet finished");
+                    StartDeleteUU();
                     break;
                 default:
                     throw new Exception(string.Format("RuleNum ({0}) out of range in LaunchRule", RuleNum));
@@ -208,8 +218,9 @@ namespace MU_Puzzle_WinForm
         private void SelectOK()
         {
             if (RuleMode == RuleModes.Rule3)
-                WorkStr = WorkStr.Substring(0, SelectorPos) + "U" + WorkStr.Substring(SelectorPos+3);
+                Replace3IWithU(SelectorPos);
             else
+
                 WorkStr.Remove(SelectorPos, 2);
 
             CancelRuleMode();
