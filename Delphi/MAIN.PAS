@@ -15,7 +15,6 @@ type
     Rule3Lbl: TLabel;
     Rule4Lbl: TLabel;
     MyMuStrListBox: TListBox;
-    PrevStrsLbl: TLabel;
     GoalLbl: TLabel;
     GoalStrLbl: TLabel;
     MuStr: TLabel;
@@ -24,9 +23,6 @@ type
     OkBtn: TBitBtn;
     NextBtn: TBitBtn;
     CancelBtn: TBitBtn;
-    Mu2Str: TLabel;
-    Mu3Str: TLabel;
-    Mu4Str: TLabel;
     Rule1Btn: TButton;
     Rule2Btn: TButton;
     Rule3Btn: TButton;
@@ -55,8 +51,10 @@ type
     procedure LaunchRule(const RuleNum: Integer);
     procedure AddU;
     procedure DuplicateStr;
-    procedure Replace3IWithU;
-    procedure DeleteUU;
+    procedure StartReplace3IWithU;
+    procedure Replace3IWithU(const StartPos: Integer);
+    procedure StartDeleteUU;
+    procedure DeleteUU(const StartPos: Integer);
     procedure CancelRuleMode;
     procedure SelectOK;
   end;
@@ -65,6 +63,9 @@ var
   MuPuzzleFrm: TMuPuzzleFrm;
 
 implementation
+
+uses
+  StrUtils;
 
 
 {$R *.DFM}
@@ -87,19 +88,14 @@ end;
 
 procedure TMuPuzzleFrm.UpdateMuStr;
 begin
-  if RuleMode = eNoRule then begin
-    MuStr.Caption := 'M' + Copy(WorkStr, 1, 74);
-    Mu2Str.Caption := Copy(WorkStr, 75, 149);
-    Mu3Str.Caption := Copy(WorkStr, 150, 224);
-    Mu4Str.Caption := Copy(WorkStr, 225, 255);
-  end else begin
-    if SelectorPos < 75 then
-      MuStr.Caption := 'M' + Copy(WorkStr, 1, SelectorPos-1) + '>' + Copy(WorkStr, SelectorPos, 255);
-    MuStr.Caption := 'M' + Copy(WorkStr, 1, SelectorPos-1) + '>' + Copy(WorkStr, SelectorPos, 255);
-  end;
+  if RuleMode = eNoRule then
+    MuStr.Caption := 'M' + WorkStr
+  else
+    MuStr.Caption := 'M' + LeftStr(WorkStr, SelectorPos-1) + '>' + RightStr(WorkStr, Length(WorkStr) - SelectorPos);
 
   { add strings to ListBox ignoring duplicates }
-  if (MyMuStrListBox.Items.IndexOf(MuStr.Caption) = -1) and (RuleMode = eNoRule) then
+  if (RuleMode = eNoRule) and ((MyMuStrListBox.Items.Count = 0) or
+            (not SameText(MuStr.Caption, MyMuStrListBox.Items[MyMuStrListBox.Items.Count-1]))) then
     MyMuStrListBox.Items.Add(MuStr.Caption);
 end;
 
@@ -208,8 +204,8 @@ begin
   case RuleNum of
     1: AddU;
     2: DuplicateStr;
-    3: Replace3IWithU;
-    4: DeleteUU;
+    3: StartReplace3IWithU;
+    4: StartDeleteUU;
   end;
 end;
 
@@ -228,7 +224,7 @@ begin
   UpdateMuStr;
 end;
 
-procedure TMuPuzzleFrm.Replace3IWithU;
+procedure TMuPuzzleFrm.StartReplace3IWithU;
 var
   c: Byte;
 begin
@@ -241,7 +237,7 @@ begin
   else begin
     { if one, replace it automatically }
     if c = 1 then
-      StringReplace(WorkStr, 'III', 'U', [])
+      Replace3IWithU(Pos('III', WorkStr))
     else begin
       { if more than one, let user select }
       RuleMode := eRule3;
@@ -256,7 +252,7 @@ begin
   end;
 end;
 
-procedure TMuPuzzleFrm.DeleteUU;
+procedure TMuPuzzleFrm.StartDeleteUU;
 var
   c: Byte;
 begin
@@ -272,7 +268,7 @@ begin
       c := Pos('UU', WorkStr);
       if c > 0 then
         { double check }
-        Delete(WorkStr, c, 2);
+        DeleteUU(c);
     end else begin
       { if more than one, let user select }
       RuleMode := eRule4;
@@ -297,13 +293,23 @@ end;
 
 procedure TMuPuzzleFrm.SelectOK;
 begin
-  if RuleMode = eRule3 then begin
-    Delete(WorkStr, SelectorPos, 3);
-    Insert('U', WorkStr, SelectorPos);
-  end else
-    Delete(WorkStr, SelectorPos, 2);
+  if RuleMode = eRule3 then
+    Replace3IWithU(SelectorPos)
+  else
+    DeleteUU(SelectorPos);
 
   CancelRuleMode;
+end;
+
+procedure TMuPuzzleFrm.DeleteUU(const StartPos: Integer);
+begin
+  Delete(WorkStr, StartPos, 2);
+end;
+
+procedure TMuPuzzleFrm.Replace3IWithU(const StartPos: Integer);
+begin
+  Delete(WorkStr, StartPos, 3);
+  Insert('U', WorkStr, StartPos);
 end;
 
 procedure TMuPuzzleFrm.Rule3BtnClick(Sender: TObject);
