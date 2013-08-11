@@ -10,10 +10,6 @@ type
   TRuleMode = (eNoRule, eRule3, eRule4);
   TMuPuzzleFrm = class(TForm)
     CurrStrLbl: TLabel;
-    Rule1Btn: TSpeedButton;
-    Rule2Btn: TSpeedButton;
-    Rule3Btn: TSpeedButton;
-    Rule4Btn: TSpeedButton;
     Rule1Lbl: TLabel;
     Rule2Lbl: TLabel;
     Rule3Lbl: TLabel;
@@ -31,6 +27,10 @@ type
     Mu2Str: TLabel;
     Mu3Str: TLabel;
     Mu4Str: TLabel;
+    Rule1Btn: TButton;
+    Rule2Btn: TButton;
+    Rule3Btn: TButton;
+    Rule4Btn: TButton;
     procedure FormCreate(Sender: TObject);
     procedure Rule1BtnClick(Sender: TObject);
     procedure Rule2BtnClick(Sender: TObject);
@@ -52,12 +52,20 @@ type
     procedure DeactivateRuleBtns;
     procedure NextSelector;
     procedure PrevSelector;
+    procedure LaunchRule(const RuleNum: Integer);
+    procedure AddU;
+    procedure DuplicateStr;
+    procedure Replace3IWithU;
+    procedure DeleteUU;
+    procedure CancelRuleMode;
+    procedure SelectOK;
   end;
 
 var
   MuPuzzleFrm: TMuPuzzleFrm;
 
 implementation
+
 
 {$R *.DFM}
 
@@ -104,17 +112,12 @@ end;
 
 procedure TMuPuzzleFrm.Rule1BtnClick(Sender: TObject);
 begin
-  { if the last character is "I", add a "U" }
-  if WorkStr[Length(WorkStr)] = 'I' then
-    WorkStr := WorkStr + 'U';
-  UpdateMuStr;
+  LaunchRule(1);
 end;
 
 procedure TMuPuzzleFrm.Rule2BtnClick(Sender: TObject);
 begin
-  { add the whole string to the end of itself }
-  WorkStr := WorkStr + WorkStr;
-  UpdateMuStr;
+  LaunchRule(2);
 end;
 
 procedure TMuPuzzleFrm.ActivateSelBtns;
@@ -181,7 +184,7 @@ begin
   if SelectorPos = 0 then
     SelectorPos := SaveSelPos
   else
-    Inc(SelectorPos, SaveSelPos);
+    SelectorPos := SelectorPos + SaveSelPos;
 end;
 
 procedure TMuPuzzleFrm.PrevSelector;
@@ -200,16 +203,32 @@ begin
     SelectorPos := SaveSelPos;
 end;
 
-procedure TMuPuzzleFrm.Rule3BtnClick(Sender: TObject);
-
-  procedure Replace(p: Byte);
-  begin
-    if Copy(WorkStr, p, 3) = 'III' then begin { double check }
-      Delete(WorkStr, p, 3);
-      Insert('U', WorkStr, p);
-    end;
+procedure TMuPuzzleFrm.LaunchRule(const RuleNum: Integer);
+begin
+  case RuleNum of
+    1: AddU;
+    2: DuplicateStr;
+    3: Replace3IWithU;
+    4: DeleteUU;
   end;
+end;
 
+procedure TMuPuzzleFrm.AddU;
+begin
+  { if the last character is "I", add a "U" }
+  if WorkStr[Length(WorkStr)] = 'I' then
+    WorkStr := WorkStr + 'U';
+  UpdateMuStr;
+end;
+
+procedure TMuPuzzleFrm.DuplicateStr;
+begin
+  { add the whole string to the end of itself }
+  WorkStr := WorkStr + WorkStr;
+  UpdateMuStr;
+end;
+
+procedure TMuPuzzleFrm.Replace3IWithU;
 var
   c: Byte;
 begin
@@ -218,25 +237,26 @@ begin
 
   { if none, put up a message }
   if c = 0 then
-    Application.MessageBox('There is no occurance of "III" in the current string.', 'Notify',
-                           mb_ICONHAND + mb_OK)
-
-  { if one, replace it automatically }
-  else if c = 1 then
-    Replace(Pos('III', WorkStr))
-
-  { if more than one, let user select }
+    Application.MessageBox('There is no occurance of "III" in the current string.', 'Notify', mb_ICONHAND + mb_OK)
   else begin
-    RuleMode := eRule3;
-    ActivateSelBtns;
-    DeactivateRuleBtns;
-    SelectorPos := 0;
-    NextSelector;
+    { if one, replace it automatically }
+    if c = 1 then
+      StringReplace(WorkStr, 'III', 'U', [])
+    else begin
+      { if more than one, let user select }
+      RuleMode := eRule3;
+
+      ActivateSelBtns;
+      DeactivateRuleBtns;
+      SelectorPos := 0;
+      NextSelector;
+    end;
+
+    UpdateMuStr;
   end;
-  UpdateMuStr;
 end;
 
-procedure TMuPuzzleFrm.Rule4BtnClick(Sender: TObject);
+procedure TMuPuzzleFrm.DeleteUU;
 var
   c: Byte;
 begin
@@ -245,24 +265,55 @@ begin
 
   { if none, put up a message }
   if c = 0 then
-    Application.MessageBox('There is no occurance of "UU" in the current string.', 'Notify',
-                           mb_ICONHAND + mb_OK)
+    Application.MessageBox('There is no occurance of "UU" in the current string.', 'Notify', mb_ICONHAND + mb_OK)
+  else begin
+    { if one, replace it automatically }
+    if c = 1 then begin
+      c := Pos('UU', WorkStr);
+      if c > 0 then
+        { double check }
+        Delete(WorkStr, c, 2);
+    end else begin
+      { if more than one, let user select }
+      RuleMode := eRule4;
 
-  { if one, replace it automatically }
-  else if c = 1 then begin
-    c := Pos('UU', WorkStr);
-    if c > 0 then  { double check }
-      Delete(WorkStr, c, 2);
+      ActivateSelBtns;
+      DeactivateRuleBtns;
+      SelectorPos := 0;
+      NextSelector;
+    end;
 
-  { if more than one, let user select }
-  end else begin
-    RuleMode := eRule4;
-    ActivateSelBtns;
-    DeactivateRuleBtns;
-    SelectorPos := 0;
-    NextSelector;
+    UpdateMuStr;
   end;
+end;
+
+procedure TMuPuzzleFrm.CancelRuleMode;
+begin
+  RuleMode := eNoRule;
+  DeactivateSelBtns;
+  ActivateRuleBtns;
   UpdateMuStr;
+end;
+
+procedure TMuPuzzleFrm.SelectOK;
+begin
+  if RuleMode = eRule3 then begin
+    Delete(WorkStr, SelectorPos, 3);
+    Insert('U', WorkStr, SelectorPos);
+  end else
+    Delete(WorkStr, SelectorPos, 2);
+
+  CancelRuleMode;
+end;
+
+procedure TMuPuzzleFrm.Rule3BtnClick(Sender: TObject);
+begin
+  LaunchRule(3);
+end;
+
+procedure TMuPuzzleFrm.Rule4BtnClick(Sender: TObject);
+begin
+  LaunchRule(4);
 end;
 
 procedure TMuPuzzleFrm.MyMuStrListBoxDblClick(Sender: TObject);
@@ -285,23 +336,12 @@ end;
 
 procedure TMuPuzzleFrm.CancelBtnClick(Sender: TObject);
 begin
-  RuleMode := eNoRule;
-  DeactivateSelBtns;
-  ActivateRuleBtns;
-  UpdateMuStr;
+  CancelRuleMode;
 end;
 
 procedure TMuPuzzleFrm.OkBtnClick(Sender: TObject);
 begin
-  if RuleMode = eRule3 then begin
-    Delete(WorkStr, SelectorPos, 3);
-    Insert('U', WorkStr, SelectorPos);
-  end else
-    Delete(WorkStr, SelectorPos, 2);
-  RuleMode := eNoRule;
-  DeactivateSelBtns;
-  ActivateRuleBtns;
-  UpdateMuStr;
+  SelectOK;
 end;
 
 end.
