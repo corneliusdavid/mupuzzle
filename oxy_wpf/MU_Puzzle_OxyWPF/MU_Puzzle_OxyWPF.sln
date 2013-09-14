@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "MU_Puzzle_OxyWPF", "MU_Puzzle_OxyWPF.oxygene", "{3960E131-F8E3-402A-BBAE-7BE5F4B4867C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MU_Puzzle_WPF", "..\..\cs_wpf\MU_Puzzle_WPF\MU_Puzzle_WPF.csproj", "{6E6457B8-7DAA-4D6D-8A04-3C555ADD620E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3960E131-F8E3-402A-BBAE-7BE5F4B4867C}.Debug|Any CPU.ActiveCfg = Debug
+		{3960E131-F8E3-402A-BBAE-7BE5F4B4867C}.Debug|Any CPU.Build.0 = Debug
+		{3960E131-F8E3-402A-BBAE-7BE5F4B4867C}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{3960E131-F8E3-402A-BBAE-7BE5F4B4867C}.Debug|Mixed Platforms.Build.0 = Debug
+		{3960E131-F8E3-402A-BBAE-7BE5F4B4867C}.Release|Any CPU.ActiveCfg = Release
+		{3960E131-F8E3-402A-BBAE-7BE5F4B4867C}.Release|Any CPU.Build.0 = Release
+		{3960E131-F8E3-402A-BBAE-7BE5F4B4867C}.Release|Mixed Platforms.ActiveCfg = Release
+		{3960E131-F8E3-402A-BBAE-7BE5F4B4867C}.Release|Mixed Platforms.Build.0 = Release
+		{6E6457B8-7DAA-4D6D-8A04-3C555ADD620E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E6457B8-7DAA-4D6D-8A04-3C555ADD620E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E6457B8-7DAA-4D6D-8A04-3C555ADD620E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{6E6457B8-7DAA-4D6D-8A04-3C555ADD620E}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{6E6457B8-7DAA-4D6D-8A04-3C555ADD620E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E6457B8-7DAA-4D6D-8A04-3C555ADD620E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E6457B8-7DAA-4D6D-8A04-3C555ADD620E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{6E6457B8-7DAA-4D6D-8A04-3C555ADD620E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
