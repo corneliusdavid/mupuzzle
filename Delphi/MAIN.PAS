@@ -10,10 +10,10 @@ type
   TRuleMode = (eNoRule, eRule3, eRule4);
   TMuPuzzleFrm = class(TForm)
     CurrStrLbl: TLabel;
-    Rule1Lbl: TLabel;
-    Rule2Lbl: TLabel;
-    Rule3Lbl: TLabel;
-    Rule4Lbl: TLabel;
+    lblRule1: TLabel;
+    lblRule2: TLabel;
+    lblRule3: TLabel;
+    lblRule4: TLabel;
     MyMuStrListBox: TListBox;
     GoalLbl: TLabel;
     GoalStrLbl: TLabel;
@@ -23,15 +23,15 @@ type
     OkBtn: TBitBtn;
     NextBtn: TBitBtn;
     CancelBtn: TBitBtn;
-    Rule1Btn: TButton;
-    Rule2Btn: TButton;
-    Rule3Btn: TButton;
-    Rule4Btn: TButton;
+    btnRule1: TButton;
+    btnRule2: TButton;
+    btnRule3: TButton;
+    btnRule4: TButton;
     procedure FormCreate(Sender: TObject);
-    procedure Rule1BtnClick(Sender: TObject);
-    procedure Rule2BtnClick(Sender: TObject);
-    procedure Rule3BtnClick(Sender: TObject);
-    procedure Rule4BtnClick(Sender: TObject);
+    procedure btnRule1Click(Sender: TObject);
+    procedure btnRule2Click(Sender: TObject);
+    procedure btnRule3Click(Sender: TObject);
+    procedure btnRule4Click(Sender: TObject);
     procedure MyMuStrListBoxDblClick(Sender: TObject);
     procedure PrevBtnClick(Sender: TObject);
     procedure NextBtnClick(Sender: TObject);
@@ -44,8 +44,7 @@ type
     procedure UpdateMuStr;
     procedure ActivateSelBtns;
     procedure DeactivateSelBtns;
-    procedure ActivateRuleBtns;
-    procedure DeactivateRuleBtns;
+    procedure ActivateRuleBtns(const TurnOn: Boolean);
     procedure NextSelector;
     procedure PrevSelector;
     procedure LaunchRule(const RuleNum: Integer);
@@ -106,12 +105,12 @@ begin
   UpdateMuStr;
 end;
 
-procedure TMuPuzzleFrm.Rule1BtnClick(Sender: TObject);
+procedure TMuPuzzleFrm.btnRule1Click(Sender: TObject);
 begin
   LaunchRule(1);
 end;
 
-procedure TMuPuzzleFrm.Rule2BtnClick(Sender: TObject);
+procedure TMuPuzzleFrm.btnRule2Click(Sender: TObject);
 begin
   LaunchRule(2);
 end;
@@ -138,42 +137,28 @@ begin
   SelectLbl.Visible := False;
 end;
 
-procedure TMuPuzzleFrm.ActivateRuleBtns;
+procedure TMuPuzzleFrm.ActivateRuleBtns(const TurnOn: Boolean);
 begin
-  Rule1Btn.Visible := True;
-  Rule2Btn.Visible := True;
-  Rule3Btn.Enabled := True;
-  Rule3Btn.Visible := True;
-  Rule4Btn.Enabled := True;
-  Rule4Btn.Visible := True;
-  Rule1Lbl.Visible := True;
-  Rule2Lbl.Visible := True;
-  Rule3Lbl.Visible := True;
-  Rule4Lbl.Visible := True;
-end;
-
-procedure TMuPuzzleFrm.DeactivateRuleBtns;
-begin
-  Rule1Btn.Visible := False;
-  Rule2Btn.Visible := False;
-  Rule1Lbl.Visible := False;
-  Rule2Lbl.Visible := False;
+  btnRule1.Visible := TurnOn;
+  btnRule2.Visible := TurnOn;
+  lblRule1.Visible := TurnOn;
+  lblRule2.Visible := TurnOn;
   if RuleMode = eRule3 then begin
-    Rule3Btn.Enabled := False;
-    Rule4Btn.Visible := False;
-    Rule4Lbl.Visible := False;
+    btnRule3.Enabled := TurnOn;
+    btnRule4.Visible := TurnOn;
+    lblRule4.Visible := TurnOn;
   end else begin
-    Rule3Btn.Visible := False;
-    Rule3Lbl.Visible := False;
-    Rule4Btn.Enabled := False;
+    btnRule3.Visible := TurnOn;
+    lblRule3.Visible := TurnOn;
+    btnRule4.Enabled := TurnOn;
   end;
 end;
 
 procedure TMuPuzzleFrm.NextSelector;
 const
-  RuleModeStr: array[1..2] of string[3] = ('III', 'UU');
+  RuleModeStr: array[1..2] of string = ('III', 'UU');
 var
-  SaveSelPos: Byte;
+  SaveSelPos: Integer;
 begin
   SaveSelPos := SelectorPos;
   SelectorPos := Pos(RuleModeStr[Ord(RuleMode)], Copy(WorkStr, SelectorPos+1, 255));
@@ -185,10 +170,10 @@ end;
 
 procedure TMuPuzzleFrm.PrevSelector;
 const
-  RuleModeStr: array[1..2] of string[3] = ('III', 'UU');
+  RuleModeStr: array[1..2] of string = ('III', 'UU');
 var
-  SaveSelPos: Byte;
-  CheckStr: string[3];
+  SaveSelPos: Integer;
+  CheckStr: string;
 begin
   SaveSelPos := SelectorPos;
   repeat
@@ -243,7 +228,7 @@ begin
       RuleMode := eRule3;
 
       ActivateSelBtns;
-      DeactivateRuleBtns;
+      ActivateRuleBtns(False);
       SelectorPos := 0;
       NextSelector;
     end;
@@ -274,7 +259,7 @@ begin
       RuleMode := eRule4;
 
       ActivateSelBtns;
-      DeactivateRuleBtns;
+      ActivateRuleBtns(False);
       SelectorPos := 0;
       NextSelector;
     end;
@@ -287,7 +272,7 @@ procedure TMuPuzzleFrm.CancelRuleMode;
 begin
   RuleMode := eNoRule;
   DeactivateSelBtns;
-  ActivateRuleBtns;
+  ActivateRuleBtns(True);
   UpdateMuStr;
 end;
 
@@ -312,12 +297,12 @@ begin
   Insert('U', WorkStr, StartPos);
 end;
 
-procedure TMuPuzzleFrm.Rule3BtnClick(Sender: TObject);
+procedure TMuPuzzleFrm.btnRule3Click(Sender: TObject);
 begin
   LaunchRule(3);
 end;
 
-procedure TMuPuzzleFrm.Rule4BtnClick(Sender: TObject);
+procedure TMuPuzzleFrm.btnRule4Click(Sender: TObject);
 begin
   LaunchRule(4);
 end;
