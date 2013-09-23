@@ -5,6 +5,8 @@ Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "MU_Puzzle_OxyWPF", "MU_Puzz
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MU_Puzzle_WPF", "..\..\cs_wpf\MU_Puzzle_WPF\MU_Puzzle_WPF.csproj", "{6E6457B8-7DAA-4D6D-8A04-3C555ADD620E}"
 EndProject
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "StringTests", "..\..\..\tests\oxygene\StringTests\StringTests.oxygene", "{46CFCFF3-2B1D-460B-8D6A-E5298FF91616}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,14 @@ Global
 		{6E6457B8-7DAA-4D6D-8A04-3C555ADD620E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6E6457B8-7DAA-4D6D-8A04-3C555ADD620E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{6E6457B8-7DAA-4D6D-8A04-3C555ADD620E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{46CFCFF3-2B1D-460B-8D6A-E5298FF91616}.Debug|Any CPU.ActiveCfg = Debug
+		{46CFCFF3-2B1D-460B-8D6A-E5298FF91616}.Debug|Any CPU.Build.0 = Debug
+		{46CFCFF3-2B1D-460B-8D6A-E5298FF91616}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{46CFCFF3-2B1D-460B-8D6A-E5298FF91616}.Debug|Mixed Platforms.Build.0 = Debug
+		{46CFCFF3-2B1D-460B-8D6A-E5298FF91616}.Release|Any CPU.ActiveCfg = Release
+		{46CFCFF3-2B1D-460B-8D6A-E5298FF91616}.Release|Any CPU.Build.0 = Release
+		{46CFCFF3-2B1D-460B-8D6A-E5298FF91616}.Release|Mixed Platforms.ActiveCfg = Release
+		{46CFCFF3-2B1D-460B-8D6A-E5298FF91616}.Release|Mixed Platforms.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
