@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+body
+{
+  background-image:url(geb1.png);
+  background-repeat:no-repeat;
+  background-position:center 0px;
+  background-color:black;
+}
+
+background
+{
+  /*background='geb1.png' no-repeat*/
+ background-position:center;
+
+}
+
+h1{
+    text-align:center;
+    color:#991212;
+    font-family:Copperplate Gothic Bold;
+	font-size:30pt;
+}
+
+
+h3{
+    text-align:center;
+    color:#991212;
+    font-family:Copperplate Gothic Bold;
+	font-size:20pt;
+}
+/*comments
+and more comments */
+h2 {
+    text-align:center;
+    font-family: Arial,sans-serif;
+    font-size:14pt;
+    /*background:hsla(310, 100%, 50%, 0.75);   /*hue (0-360) saturation(0-100%) lightness(0-100%) transparency (0-1) */
+    color:rgba(89, 0, 127, 0.75); /*red green blue (0-255), transparence (0-1) */
+     color:#991212;
+     background:black;
+    /*color:lime;  */
+    }
+
+p {
+    text-align:center;
+    font-family:Times New Roman;
+    font-size: 16pt;
+    color:white;
+}
+
+img{
+ border:4px solid red;
+     text-align:center;
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset="UTF-8">
+    <title>MU Puzzle</title>
+    <link rel="stylesheet" type="text/css" href="MU.css" />
+    </style>
+    <script type="text/javascript">
+
+var myString = "MI";
+
+//Add a "U" if last letter is "I"
+function Rule1()
+{
+var len = myString.length;
+if (myString[len-1] == 'I')
+  {
+    myString = myString + 'U';
+  }
+  else
+  {
+    alert ('It is not');
+  }
+
+//document.forms[0].elements["History"].value = 'Sex';
+//document.getElementById("buttons").style.display="block";
+document.getElementById("currentnmess").innerHTML=myString;
+}
+
+//Add everything after the M to the end
+function Rule2()
+{
+var len = myString.length;
+myString = myString + myString.substring(1,len);
+document.getElementById("currentnmess").innerHTML=myString;
+EnableRules(false);
+}
+
+//Replace "III" with "U"
+function Rule3()
+{
+var i = myString.indexOf('III');
+if (i > 0)
+    {
+        document.getElementById("buttons").style.display="block";
+        myString = myString.replace('III','U')
+    }
+    else
+    {
+        alert('What III?');
+    }
+document.getElementById("currentnmess").innerHTML=myString;
+}
+
+//Delete an occurance of "UU"
+function Rule4()
+{
+    var i = myString.indexOf('UU');
+    if (i < 0)          //string not found
+    {
+        alert ('What UU, you?');
+    }
+    {                   //how many of this substring are there?
+      var tString = myString.replace('UU','');
+      var x = tString.indexOf('UU');
+      if (x < 0)  myString = myString.replace('UU','');   //there was one occurance
+      else
+      {
+        document.getElementById("buttons").style.display="block";
+      //
+      }
+    }
+    document.getElementById("currentnmess").innerHTML=myString;
+}
+
+function EnableRules (en)
+{
+  document.getElementById("rules").disabled = !en;
+  //document.getElementById("one").disabled = true;  getElement ruturns null
+  //document.forms[0].elements["one"].disabled = true;  only works if there is a form declared in the body
+}
+
+function OK()
+{
+  document.getElementById("currentnmess").innerHTML=myString;
+  document.getElementById("buttons").style.display="none";
+  EnableRules(true);
+}
+
+function Prev()
+{
+
+}
+
+function Next()
+{
+
+}
+
+    </script>
+  </head>
+
+  <body >
+    <h1>MU Puzzle</h1>
+    <h2>Can you transform the string MI to MU using these rules?  </h2>
+    <div id="rules">
+      <P ALIGN=center><button name="one" style="WIDTH: 250px; HEIGHT: 25px;" onclick="Rule1();">Add a "U" if last letter is "I"</button></p>
+
+      <P ALIGN=center><button style="WIDTH: 250px; HEIGHT: 25px;" onclick="Rule2();">Add everything after the M to the end</button></p>
+
+      <P ALIGN=center><button style="WIDTH: 250px; HEIGHT: 25px;" onclick="Rule3();">Replace "III" with "U"</button></p>
+
+      <P ALIGN=center><button  style="WIDTH: 250px; HEIGHT: 25px;" onclick="Rule4();">Delete an occurance of "UU"</button></p>
+      <a /div>
+   <h1>   <div id="currentnmess">MI</div></h2>
+
+    <div id = "buttons">
+      <P ALIGN=center><button style="WIDTH: 80px; HEIGHT: 20px;" onclick="Prev();">Prev</button>
+      <button style="WIDTH: 80px; HEIGHT: 20px;" onclick="OK();">OK</button>
+      <button style="WIDTH: 80px; HEIGHT: 20px;" onclick="Next();">Next</button></p>
+      </div>
+   <!--P ALIGN=center><textarea name="History" style="WIDTH: 300px; HEIGHT: 200px;" maxlength="1000"></textarea></p!-->
+
+     <script type="text/javascript">
+       document.getElementById("buttons").style.display="none";
+       </script>
+  </body>
+</html>
