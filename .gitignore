@@ -10,7 +10,8 @@ __history
 bin
 cs_wpf/MU_Puzzle_WPF/bin
 cs_wpf/MU_Puzzle_WPF/obj
-oxygene/Backup
-oxygene/obj/
+oxy_wpf/MU_Puzzle_OxyWPF/obj
 *.dsk
 *.~dsk
+oxygene_class_attempt.zip
+desktop.ini
