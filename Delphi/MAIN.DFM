@@ -3,62 +3,62 @@ object MuPuzzleFrm: TMuPuzzleFrm
   Top = 139
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'MU Puzzle'
-  ClientHeight = 442
-  ClientWidth = 664
+  ClientHeight = 525
+  ClientWidth = 789
   Color = clBtnFace
-  Constraints.MinHeight = 450
-  Constraints.MinWidth = 660
+  Constraints.MinHeight = 534
+  Constraints.MinWidth = 784
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -13
+  Font.Height = -16
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = True
   Position = poScreenCenter
   OnCreate = FormCreate
   DesignSize = (
-    664
-    442)
-  PixelsPerInch = 96
-  TextHeight = 16
+    789
+    525)
+  PixelsPerInch = 120
+  TextHeight = 19
   object SelectLbl: TLabel
-    Left = 150
-    Top = 112
-    Width = 45
-    Height = 21
+    Left = 178
+    Top = 133
+    Width = 54
+    Height = 25
     Margins.Left = 2
     Margins.Top = 2
     Margins.Right = 2
     Caption = 'Select'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clGrayText
-    Font.Height = -19
+    Font.Height = -22
     Font.Name = 'times new roman'
     Font.Style = []
     ParentFont = False
     Visible = False
   end
   object CurrStrLbl: TLabel
-    Left = 8
-    Top = 16
-    Width = 94
-    Height = 18
+    Left = 10
+    Top = 19
+    Width = 116
+    Height = 22
     Margins.Left = 2
     Margins.Top = 2
     Margins.Right = 2
     Caption = 'Current String:'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -15
+    Font.Height = -18
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
   end
   object lblRule1: TLabel
-    Left = 105
-    Top = 162
-    Width = 179
-    Height = 18
+    Left = 119
+    Top = 192
+    Width = 218
+    Height = 22
     Margins.Left = 2
     Margins.Top = 2
     Margins.Right = 2
@@ -66,16 +66,16 @@ object MuPuzzleFrm: TMuPuzzleFrm
     Caption = 'Add a "U" if last letter is "I"'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -15
+    Font.Height = -18
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
   end
   object lblRule2: TLabel
-    Left = 34
-    Top = 182
-    Width = 250
-    Height = 18
+    Left = 37
+    Top = 216
+    Width = 300
+    Height = 22
     Margins.Left = 2
     Margins.Top = 2
     Margins.Right = 2
@@ -83,64 +83,64 @@ object MuPuzzleFrm: TMuPuzzleFrm
     Caption = 'Add everything after the M to the end'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -15
+    Font.Height = -18
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
   end
   object lblRule3: TLabel
-    Left = 439
-    Top = 162
-    Width = 142
-    Height = 18
+    Left = 521
+    Top = 192
+    Width = 172
+    Height = 22
     Margins.Left = 2
     Margins.Top = 2
     Margins.Right = 2
     Caption = 'Replace "III" with "U"'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -15
+    Font.Height = -18
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
   end
   object lblRule4: TLabel
-    Left = 439
-    Top = 182
-    Width = 188
-    Height = 18
+    Left = 521
+    Top = 216
+    Width = 224
+    Height = 22
     Margins.Left = 2
     Margins.Top = 2
     Margins.Right = 2
     Caption = 'Delete an occurance of "UU"'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -15
+    Font.Height = -18
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
   end
   object GoalLbl: TLabel
-    Left = 8
-    Top = 112
-    Width = 74
-    Height = 18
+    Left = 10
+    Top = 133
+    Width = 93
+    Height = 22
     Margins.Left = 2
     Margins.Top = 2
     Margins.Right = 2
     Caption = 'Goal String:'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -15
+    Font.Height = -18
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
   end
   object GoalStrLbl: TLabel
-    Left = 23
-    Top = 136
-    Width = 42
-    Height = 17
+    Left = 27
+    Top = 162
+    Width = 50
+    Height = 20
     Margins.Left = 2
     Margins.Top = 2
     Margins.Right = 2
@@ -150,7 +150,7 @@ object MuPuzzleFrm: TMuPuzzleFrm
     Color = clBtnFace
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clBlack
-    Font.Height = -15
+    Font.Height = -18
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentColor = False
@@ -158,9 +158,9 @@ object MuPuzzleFrm: TMuPuzzleFrm
   end
   object MuStr: TLabel
     Left = 7
-    Top = 40
-    Width = 650
-    Height = 70
+    Top = 48
+    Width = 772
+    Height = 83
     Margins.Left = 2
     Margins.Top = 2
     Margins.Right = 2
@@ -170,8 +170,8 @@ object MuPuzzleFrm: TMuPuzzleFrm
     Color = clBtnFace
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clBlack
-    Font.Height = -15
-    Font.Name = 'Tahoma'
+    Font.Height = -18
+    Font.Name = 'Lucida Console'
     Font.Pitch = fpFixed
     Font.Style = []
     ParentColor = False
@@ -180,23 +180,24 @@ object MuPuzzleFrm: TMuPuzzleFrm
   end
   object MyMuStrListBox: TListBox
     Left = 0
-    Top = 209
-    Width = 664
-    Height = 233
+    Top = 248
+    Width = 789
+    Height = 277
     Margins.Left = 2
     Margins.Top = 2
     Margins.Right = 2
     Margins.Bottom = 2
     Align = alBottom
     Anchors = [akLeft, akTop, akRight, akBottom]
+    ItemHeight = 19
     TabOrder = 0
     OnDblClick = MyMuStrListBoxDblClick
   end
   object PrevBtn: TBitBtn
-    Left = 192
-    Top = 8
-    Width = 57
-    Height = 25
+    Left = 228
+    Top = 10
+    Width = 68
+    Height = 29
     Margins.Left = 2
     Margins.Top = 2
     Margins.Right = 2
@@ -204,7 +205,7 @@ object MuPuzzleFrm: TMuPuzzleFrm
     Caption = '&Prev'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -12
+    Font.Height = -13
     Font.Name = 'arial narrow'
     Font.Style = []
     Glyph.Data = {
@@ -240,10 +241,10 @@ object MuPuzzleFrm: TMuPuzzleFrm
     OnClick = PrevBtnClick
   end
   object OkBtn: TBitBtn
-    Left = 256
-    Top = 8
-    Width = 57
-    Height = 25
+    Left = 304
+    Top = 10
+    Width = 68
+    Height = 29
     Margins.Left = 2
     Margins.Top = 2
     Margins.Right = 2
@@ -252,7 +253,7 @@ object MuPuzzleFrm: TMuPuzzleFrm
     Default = True
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -12
+    Font.Height = -13
     Font.Name = 'arial narrow'
     Font.Style = []
     Glyph.Data = {
@@ -289,10 +290,10 @@ object MuPuzzleFrm: TMuPuzzleFrm
     OnClick = OkBtnClick
   end
   object NextBtn: TBitBtn
-    Left = 381
-    Top = 7
-    Width = 57
-    Height = 25
+    Left = 452
+    Top = 8
+    Width = 68
+    Height = 30
     Margins.Left = 2
     Margins.Top = 2
     Margins.Right = 2
@@ -300,7 +301,7 @@ object MuPuzzleFrm: TMuPuzzleFrm
     Caption = '&Next'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -12
+    Font.Height = -13
     Font.Name = 'arial narrow'
     Font.Style = []
     Glyph.Data = {
@@ -336,10 +337,10 @@ object MuPuzzleFrm: TMuPuzzleFrm
     OnClick = NextBtnClick
   end
   object CancelBtn: TBitBtn
-    Left = 320
-    Top = 8
-    Width = 57
-    Height = 25
+    Left = 380
+    Top = 10
+    Width = 68
+    Height = 29
     Margins.Left = 2
     Margins.Top = 2
     Margins.Right = 2
@@ -348,7 +349,7 @@ object MuPuzzleFrm: TMuPuzzleFrm
     Caption = '&Cancel'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -12
+    Font.Height = -13
     Font.Name = 'arial narrow'
     Font.Style = []
     Glyph.Data = {
@@ -385,10 +386,10 @@ object MuPuzzleFrm: TMuPuzzleFrm
     OnClick = CancelBtnClick
   end
   object btnRule1: TButton
-    Left = 288
-    Top = 158
-    Width = 70
-    Height = 23
+    Left = 342
+    Top = 188
+    Width = 83
+    Height = 27
     Margins.Left = 2
     Margins.Top = 2
     Margins.Right = 2
@@ -398,10 +399,10 @@ object MuPuzzleFrm: TMuPuzzleFrm
     OnClick = btnRule1Click
   end
   object btnRule2: TButton
-    Left = 288
-    Top = 182
-    Width = 70
-    Height = 23
+    Left = 342
+    Top = 216
+    Width = 83
+    Height = 27
     Margins.Left = 2
     Margins.Top = 2
     Margins.Right = 2
@@ -411,10 +412,10 @@ object MuPuzzleFrm: TMuPuzzleFrm
     OnClick = btnRule2Click
   end
   object btnRule3: TButton
-    Left = 362
-    Top = 158
-    Width = 73
-    Height = 23
+    Left = 430
+    Top = 188
+    Width = 87
+    Height = 27
     Margins.Left = 2
     Margins.Top = 2
     Margins.Right = 2
@@ -424,10 +425,10 @@ object MuPuzzleFrm: TMuPuzzleFrm
     OnClick = btnRule3Click
   end
   object btnRule4: TButton
-    Left = 362
-    Top = 182
-    Width = 73
-    Height = 23
+    Left = 430
+    Top = 216
+    Width = 87
+    Height = 27
     Margins.Left = 2
     Margins.Top = 2
     Margins.Right = 2

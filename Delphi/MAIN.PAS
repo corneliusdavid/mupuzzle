@@ -145,13 +145,25 @@ begin
   lblRule2.Visible := TurnOn;
   if RuleMode = eRule3 then begin
     btnRule3.Enabled := TurnOn;
+    lblRule3.Enabled := TurnOn;
     btnRule4.Visible := TurnOn;
     lblRule4.Visible := TurnOn;
-  end else begin
+  end else if RuleMode = eRule4 then begin
     btnRule3.Visible := TurnOn;
     lblRule3.Visible := TurnOn;
     btnRule4.Enabled := TurnOn;
+    lblRule4.Enabled := TurnOn;
+  end else if TurnOn then begin
+    btnRule3.Visible := True;
+    lblRule3.Visible := True;
+    btnRule3.Enabled := True;
+    lblRule3.Enabled := True;
+    btnRule4.Visible := True;
+    lblRule4.Visible := True;
+    btnRule4.Enabled := True;
+    lblRule4.Enabled := True;
   end;
+
 end;
 
 procedure TMuPuzzleFrm.NextSelector;
