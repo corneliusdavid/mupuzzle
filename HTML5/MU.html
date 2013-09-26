@@ -1,87 +1,95 @@
 <!DOCTYPE html>
 <html lang = "en">
-  <head>
-    <meta charset="UTF-8">
-    <title>MU Puzzle</title>
-    <link rel="stylesheet" type="text/css" href="MU.css" />
-    </style>
-    <script type="text/javascript">
+<head>
+<meta charset="UTF-8">
+<title>MU Puzzle</title>
+<link rel="stylesheet" type="text/css" href="MU.css" />
 
-var myString = "MI";
+<script>
 
-//Add a "U" if last letter is "I"
+var WorkString = "I";
+var RuleMode = 0;
+var SelectorPos = -1;
+
+function UpdateMuStr()
+{
+	document.getElementById("MuStr").innerHTML = 'M' + WorkString;
+
+}
+
 function Rule1()
+// Add a "U" if last letter is "I"
 {
-var len = myString.length;
-if (myString[len-1] == 'I')
-  {
-    myString = myString + 'U';
-  }
-  else
-  {
-    alert ('It is not');
-  }
+	var len = WorkString.length;
 
-document.getElementById("currentnmess").innerHTML=myString;
+	if (WorkString[len-1] == 'I')
+		WorkString += 'U';
+	
+	UpdateMuStr();
 }
 
-//Add everything after the M to the end
 function Rule2()
+// Add everything after the M to the end
 {
-var len = myString.length;
-myString = myString + myString.substring(1,len);
-document.getElementById("currentnmess").innerHTML=myString;
-EnableRules(false);
+	WorkString += WorkString;	
+
+	UpdateMuStr();
 }
 
-//Replace "III" with "U"
 function Rule3()
+// Replace "III" with "U"
 {
-var i = myString.indexOf('III');
-if (i > 0)
-    {
-        document.getElementById("buttons").style.display="block";
-        myString = myString.replace('III','U')
-    }
-    else
-    {
-        alert('What III?');
-    }
-document.getElementById("currentnmess").innerHTML=myString;
+	var i = WorkString.indexOf('III');
+
+	if (i > 0)
+	{
+		document.getElementById("buttons").style.display = "block";
+		WorkString = WorkString.replace('III','U')
+	}
+	else
+	{
+		alert('What III?');
+	}
+
+	UpdateMuStr();
 }
 
-//Delete an occurance of "UU"
 function Rule4()
+// Delete an occurance of "UU"
 {
-    var i = myString.indexOf('UU');
-    if (i < 0)          //string not found
-    {
-        alert ('What UU, you?');
-    }
-    {                   //how many of this substring are there?
-      var tString = myString.replace('UU','');
-      var x = tString.indexOf('UU');
-      if (x < 0)  myString = myString.replace('UU','');   //there was one occurance
-      else
-      {
-        document.getElementById("buttons").style.display="block";
-      }
-    }
-    document.getElementById("currentnmess").innerHTML=myString;
+	var i = WorkString.indexOf('UU');
+	
+	if (i < 0)          
+		// string not found
+		alert ('What UU, you?');
+	else
+	{                   
+		//how many of this substring are there?
+		var tString = WorkString.replace('UU','');
+		var x = tString.indexOf('UU');
+
+		if (x < 0)  
+			// there was one occurance
+			WorkString = WorkString.replace('UU','');   
+		else
+			document.getElementById("buttons").style.display = "block";
+	}
+
+	UpdateMuStr();
 }
 
 function EnableRules (en)
 {
-  document.getElementById("rules").disabled = !en;
-  //document.getElementById("one").disabled = true;  getElement ruturns null
-  //document.forms[0].elements["one"].disabled = true;  only works if there is a form declared in the body
+	document.getElementById("rules").disabled = !en;
+	//document.getElementById("one").disabled = true;  getElement ruturns null
+	//document.forms[0].elements["one"].disabled = true;  only works if there is a form declared in the body
 }
 
 function OK()
 {
-  document.getElementById("currentnmess").innerHTML=myString;
-  document.getElementById("buttons").style.display="none";
-  EnableRules(true);
+	document.getElementById("MuStr").innerHTML = myString;
+	document.getElementById("buttons").style.display="none";
+	EnableRules(true);
 }
 
 function Prev()
@@ -94,32 +102,30 @@ function Next()
 
 }
 
-    </script>
-  </head>
+</script>
+</head>
 
-  <body >
+<body >
     <h1>MU Puzzle</h1>
     <h2>Can you transform the string MI to MU using these rules?  </h2>
-    <div id="rules">
-      <P ALIGN=center><button name="one" style="WIDTH: 250px; HEIGHT: 25px;" onclick="Rule1();">Add a "U" if last letter is "I"</button></p>
+	<div id="rules">
+		<label>Add a "U" if last letter is "I"<button name="one" onclick="Rule1();">Rule 1</button></label>
+		<label><button name="three" onclick="Rule3();">Rule 3</button>Replace "III" with "U"</label><br />
+		<label>Add everything after the M to the end<button name="two" onclick="Rule2();">Rule 2</button></label>
+		<label><button onclick="Rule4();">Rule 4</button>Delete an occurance of "UU"</label>
+	</div>
 
-      <P ALIGN=center><button style="WIDTH: 250px; HEIGHT: 25px;" onclick="Rule2();">Add everything after the M to the end</button></p>
+ 	<h3><div id="MuStr">MI</div></h3>
 
-      <P ALIGN=center><button style="WIDTH: 250px; HEIGHT: 25px;" onclick="Rule3();">Replace "III" with "U"</button></p>
-
-      <P ALIGN=center><button  style="WIDTH: 250px; HEIGHT: 25px;" onclick="Rule4();">Delete an occurance of "UU"</button></p>
-      <a /div>
-   <h1>   <div id="currentnmess">MI</div></h2>
-
-    <div id = "buttons">
-      <P ALIGN=center><button style="WIDTH: 80px; HEIGHT: 20px;" onclick="Prev();">Prev</button>
-      <button style="WIDTH: 80px; HEIGHT: 20px;" onclick="OK();">OK</button>
-      <button style="WIDTH: 80px; HEIGHT: 20px;" onclick="Next();">Next</button></p>
-      </div>
+	<div id = "buttons">
+		<P ALIGN=center><button style="WIDTH: 80px; HEIGHT: 20px;" onclick="Prev();">Prev</button>
+		<button style="WIDTH: 80px; HEIGHT: 20px;" onclick="OK();">OK</button>
+		<button style="WIDTH: 80px; HEIGHT: 20px;" onclick="Next();">Next</button></p>
+	</div>
    <!--P ALIGN=center><textarea name="History" style="WIDTH: 300px; HEIGHT: 200px;" maxlength="1000"></textarea></p!-->
 
-     <script type="text/javascript">
-       document.getElementById("buttons").style.display="none";
-       </script>
-  </body>
+	<script>
+		document.getElementById("buttons").style.display="none";
+	</script>
+</body>
 </html>
