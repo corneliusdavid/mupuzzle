@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+
+  <Identity Name="36e18d9a-cc5a-4e89-96ae-027540c09a51"
+            Publisher="CN=david"
+            Version="1.0.0.0" />
+
+  <Properties>
+    <DisplayName>MU_Puzzle_WinRT</DisplayName>
+    <PublisherDisplayName>david</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+
+  <Prerequisites>
+    <OSMinVersion>6.2.0</OSMinVersion>
+    <OSMaxVersionTested>6.2.0</OSMaxVersionTested>
+  </Prerequisites>
+
+  <Resources>
+    <Resource Language="x-generate"/>
+  </Resources>
+
+  <Applications>
+    <Application Id="App"
+        Executable="$targetnametoken$.exe"
+        EntryPoint="MU_Puzzle_WinRT.App">
+        <VisualElements
+            DisplayName="MU_Puzzle_WinRT"
+            Logo="Assets\Logo.png"
+            SmallLogo="Assets\SmallLogo.png"
+            Description="MU_Puzzle_WinRT"
+            ForegroundText="light"
+            BackgroundColor="#4b5195">
+            <DefaultTile ShowName="allLogos" WideLogo="Assets\WideLogo.png" />
+            <SplashScreen Image="Assets\SplashScreen.png" />
+        </VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>
