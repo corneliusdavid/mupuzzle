@@ -6,7 +6,7 @@
     xmlns:local="using:MU_Puzzle_WinRT"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d" >
 
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -36,7 +36,7 @@
             </Grid>
 
             <TextBlock HorizontalAlignment="Left" FontFamily="Verdana" FontSize="20" Margin="21,0,0,0" >Current String:</TextBlock>
-            <TextBlock HorizontalAlignment="Left" FontFamily="Lucida Console" FontSize="16" x:Name="lblMuStr" Margin="21,5,21,0" Height="60" >MI</TextBlock>
+            <TextBlock HorizontalAlignment="Stretch" FontFamily="Lucida Console" FontSize="16" x:Name="lblMuStr" Margin="42,5,0,0"  Height="60" >MI</TextBlock>
             <TextBlock HorizontalAlignment="Left" FontFamily="Verdana" FontSize="18" Margin="21,5,0,0" >Goal String:</TextBlock>
             <TextBlock HorizontalAlignment="Left" FontFamily="Lucida Console" FontSize="18" Margin="42,0,0,0" >MU</TextBlock>
 
@@ -53,16 +53,16 @@
                 </Grid.RowDefinitions>
 
                 <TextBlock x:Name="lblRule1" FontFamily="Verdana" FontSize="16" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0">Add &quot;U&quot; if last letter is &quot;I&quot;</TextBlock>
-                <TextBlock x:Name="lblRule2" FontFamily="Verdana" FontSize="16" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="3"  Grid.Row="0">Add everything after &quot;M&quot; to the end</TextBlock>
-                <TextBlock x:Name="lblRule3" FontFamily="Verdana" FontSize="16" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0"  Grid.Row="1">Replace &quot;III&quot; with &quot;U&quot;</TextBlock>
+                <TextBlock x:Name="lblRule2" FontFamily="Verdana" FontSize="16" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0"  Grid.Row="1">Add everything after &quot;M&quot; to the end</TextBlock>
+                <TextBlock x:Name="lblRule3" FontFamily="Verdana" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="3"  Grid.Row="0">Replace &quot;III&quot; with &quot;U&quot;</TextBlock>
                 <TextBlock x:Name="lblRule4" FontFamily="Verdana" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="3" Grid.Row="1">Delete an occurance of &quot;UU&quot;</TextBlock>
-                
+
                 <Button x:Name="btnRule1" Content="Rule 1" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" Click="btnRule1_Click"/>
-                <Button x:Name="btnRule2" Content="Rule 2" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="0" Click="btnRule2_Click"/>
-                <Button x:Name="btnRule3" Content="Rule 3" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" Click="btnRule3_Click"/>
+                <Button x:Name="btnRule2" Content="Rule 2" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" Click="btnRule2_Click"/>
+                <Button x:Name="btnRule3" Content="Rule 3" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="0" Click="btnRule3_Click"/>
                 <Button x:Name="btnRule4" Content="Rule 4" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1" Click="btnRule4_Click"/>
             </Grid>
         </StackPanel>
-        <ListBox x:Name="lbMuStrs" Margin="25,10,25,10" VerticalAlignment="Stretch" Grid.Row="1" />
+        <ListView x:Name="MuStrList" Margin="25,10,25,10" FontFamily="Lucida Console" FontSize="14" VerticalAlignment="Stretch" Grid.Row="1" Tapped="MuStrList_Tapped" />
     </Grid>
 </Page>

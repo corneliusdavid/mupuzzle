@@ -24,6 +24,7 @@ type
     WorkStr: String;
     RuleMode: TRuleMode;
     SelectorPos: Integer;
+    LastStrAdded: String;
     method UpdateMuStr;
     method AddU;
     method DuplicateStr;
@@ -44,17 +45,15 @@ type
     method btnRule2_Click(sender: Object; e: Windows.UI.Xaml.RoutedEventArgs);
     method btnRule3_Click(sender: Object; e: Windows.UI.Xaml.RoutedEventArgs);
     method btnRule4_Click(sender: Object; e: Windows.UI.Xaml.RoutedEventArgs);
-      method btnCancel_Click(sender: Object; e: Windows.UI.Xaml.RoutedEventArgs);
-      method btnOK_Click(sender: Object; e: Windows.UI.Xaml.RoutedEventArgs);
-      method btnPrev_Click(sender: Object; e: Windows.UI.Xaml.RoutedEventArgs);
-      method btnNext_Click(sender: Object; e: Windows.UI.Xaml.RoutedEventArgs);
-
+    method btnCancel_Click(sender: Object; e: Windows.UI.Xaml.RoutedEventArgs);
+    method btnOK_Click(sender: Object; e: Windows.UI.Xaml.RoutedEventArgs);
+    method btnPrev_Click(sender: Object; e: Windows.UI.Xaml.RoutedEventArgs);
+    method btnNext_Click(sender: Object; e: Windows.UI.Xaml.RoutedEventArgs);
+    method MuStrList_Tapped(sender: Object; e: Windows.UI.Xaml.Input.TappedRoutedEventArgs);
   public
     constructor ;
-
-  protected
-    method OnNavigatedTo(e: NavigationEventArgs); override;
   end;
+
 
 implementation
 
@@ -64,11 +63,8 @@ begin
 
   RuleMode := TRuleMode.eNoRule;
   WorkStr := 'I';
+  LastStrAdded := '';
   UpdateMuStr;
-end;
-
-method MainPage.OnNavigatedTo(e: NavigationEventArgs);
-begin
 end;
 
 method MainPage.UpdateMuStr;
@@ -85,11 +81,11 @@ begin
     end;      
 
   { add strings to ListBox ignoring duplicates }
-{
-      if (RuleMode = TRuleMode.eNoRule) and ((lbMuStrs.Items.Count = 0) or
-            (String.Compare(lblMuStr.Text.ToString, lbMuStrs.Items. [lbMuStrs.Items.Count-1].ToString) <> 0)) then
-    lbMuStrs.Items.Add(lblMuStr.Text.ToString);
-}
+  if (RuleMode = TRuleMode.eNoRule) and ((MuStrList.Items.Count = 0) or
+     (String.Compare(lblMuStr.Text, LastStrAdded) <> 0)) then begin
+    MuStrList.Items.Add(lblMuStr.Text);
+    LastStrAdded := lblMuStr.Text;
+  end;
 end;
 
 method MainPage.btnRule1_Click(sender: Object; e: Windows.UI.Xaml.RoutedEventArgs);
@@ -172,11 +168,6 @@ begin
   end;
 end;
 
-method MainPage.SetNewWorkingString;
-begin
-
-end;
-
 method MainPage.NextSelector;
 begin
   var NewSelectorPos := WorkStr.IndexOf(CurrRuleModeStr, SelectorPos + 1);
@@ -187,10 +178,11 @@ end;
 
 method MainPage.PrevSelector;
 begin
-  var NewSelectorPos := WorkStr.IndexOf(CurrRuleModeStr, SelectorPos + 1);
+  var RuleModeStr := CurrRuleModeStr;
+  var NewSelectorPos := SelectorPos - 1;
 
   while NewSelectorPos > -1 do
-    if WorkStr.Substring(NewSelectorPos).StartsWith(CurrRuleModeStr) then begin
+    if WorkStr.Substring(NewSelectorPos).StartsWith(RuleModeStr) then begin
       SelectorPos := NewSelectorPos;
       Break;
     end else
@@ -209,7 +201,7 @@ begin
   for i := 0 to WorkStr.Length - 3 do begin
     s := WorkStr.Substring(i);
     if s.StartsWith('III') then
-      inc(count);
+      Inc(count);
   end;
 
   { if none, put up a message }
@@ -328,6 +320,19 @@ method MainPage.btnNext_Click(sender: Object; e: Windows.UI.Xaml.RoutedEventArgs
 begin
   NextSelector;
   UpdateMuStr;
+end;
+
+method MainPage.SetNewWorkingString;
+begin
+{
+  WorkStr := MuStrList. Itemes.Selected.Substring(1);
+  UpdateMuStr;
+}
+end;
+
+method MainPage.MuStrList_Tapped(sender: Object; e: Windows.UI.Xaml.Input.TappedRoutedEventArgs);
+begin
+  SetNewWorkingString;
 end;
 
 end.
