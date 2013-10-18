@@ -247,21 +247,13 @@ begin
   lblRule2.Visibility := TurnOn;
 
   if RuleMode = TRuleMode.eRule3 then begin
-<<<<<<< HEAD
     btnRule3.IsEnabled := TurnOn = Visibility.Visible;
-=======
-    btnRule3.IsEnabled := TurnOn = System.Windows.Visibility.Visible;
->>>>>>> origin/master
     lblRule4.Visibility := TurnOn;
     btnRule4.Visibility := TurnOn;
   end else if RuleMode = TRuleMode.eRule4 then begin
     btnRule3.Visibility := TurnOn;
     lblRule3.Visibility := TurnOn;
-<<<<<<< HEAD
     btnRule4.IsEnabled := TurnOn = Visibility.Visible;
-=======
-    btnRule4.IsEnabled := TurnOn = System.Windows.Visibility.Visible;
->>>>>>> origin/master
   end else begin
     lblRule3.Visibility := TurnOn;
     btnRule3.Visibility := TurnOn;
