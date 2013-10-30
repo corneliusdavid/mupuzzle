@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">MU Puzzle</string>
+  <string name="curr_str">MI</string>
+  <string name="btnRule1">Rule 1</string>
+  <string name="btnRule2">Rule 2</string>
+  <string name="btnRule3">Rule 3</string>
+  <string name="btnRule4">Rule 4</string>
+  <string name="txtRule1">Add a "U" if the last letter is "I"</string>
+  <string name="txtRule2">Add everything after the M to the end</string>
+  <string name="txtRule3">Replace "III" with "U"</string>
+  <string name="txtRule4">Delete an occurance of "UU"</string>
+</resources>

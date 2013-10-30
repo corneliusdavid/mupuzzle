@@ -1,0 +1,2 @@
+V:\mupuzzle\oxy_android\com.corneliusconcepts.mu_puzzle\MU Puzzle for Android\bin\Debug\com.corneliusconcepts.mupuzzle.jar
+V:\mupuzzle\oxy_android\com.corneliusconcepts.mu_puzzle\MU Puzzle for Android\obj\Debug\com.corneliusconcepts.mupuzzle.jar

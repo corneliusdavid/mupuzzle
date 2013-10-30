@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+    >
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Current String:"/>
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/curr_str"/>
+    <TextView android:layout_width="fill_parent" 
+              android:layout_height="wrap_content"
+              android:text="Goal String: "/>
+    <TextView android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:text="MU"/>
+    
+    <Button
+              android:id="@+id/btnRule1"
+              android:text="@string/btnRule1"
+              style="@style/RuleButton" />
+    <TextView style="@style'RuleText"
+              android:text="@string/txtRule1"/>
+      
+    <Button
+              android:id="@+id/btnRule2"
+              android:text="@string/btnRule2"
+              style="@style/RuleButton" />
+    <TextView style="@style'RuleText"
+              android:text="@string/txtRule2"/>
+
+    <Button
+              android:id="@+id/btnRule3"
+              android:text="@string/btnRule3"
+              style="@style/RuleButton" />
+    <TextView style="@style'RuleText"
+              android:text="@string/txtRule3"/>
+
+    <Button
+              android:id="@+id/btnRule4"
+              android:text="@string/btnRule4"
+              style="@style/RuleButton" />
+    <TextView style="@style'RuleText"
+              android:text="@string/txtRule4"/>
+
+  </LinearLayout>
