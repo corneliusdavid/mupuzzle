@@ -63,6 +63,6 @@
                 <Button x:Name="btnRule4" Content="Rule 4" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1" Click="btnRule4_Click"/>
             </Grid>
         </StackPanel>
-        <ListView x:Name="MuStrList" Margin="25,10,25,10" FontFamily="Lucida Console" FontSize="14" VerticalAlignment="Stretch" Grid.Row="1" Tapped="MuStrList_Tapped" />
+        <ListView x:Name="MuStrList" Margin="25,10,25,10" FontFamily="Lucida Console" FontSize="14" VerticalAlignment="Stretch" Grid.Row="1" DoubleTapped="MuStrList_DoubleTapped" />
     </Grid>
 </Page>

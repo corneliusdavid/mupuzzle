@@ -37,7 +37,7 @@ type
     method LaunchRule(const RuleNum: Integer);
     method ActivateSelBtns(const TurnOn: Windows.UI.Xaml.Visibility);
     method ActivateRuleBtns(const TurnOn: Windows.UI.Xaml.Visibility);
-    method SetNewWorkingString;
+    method SetNewWorkingString(NewWorkStr: string);
     method CurrRuleModeStr: String;
     method NextSelector; 
     method PrevSelector;
@@ -50,6 +50,7 @@ type
     method btnPrev_Click(sender: Object; e: Windows.UI.Xaml.RoutedEventArgs);
     method btnNext_Click(sender: Object; e: Windows.UI.Xaml.RoutedEventArgs);
     method MuStrList_Tapped(sender: Object; e: Windows.UI.Xaml.Input.TappedRoutedEventArgs);
+      method MuStrList_DoubleTapped(sender: Object; e: Windows.UI.Xaml.Input.DoubleTappedRoutedEventArgs);
   public
     constructor ;
   end;
@@ -322,17 +323,19 @@ begin
   UpdateMuStr;
 end;
 
-method MainPage.SetNewWorkingString;
+method MainPage.SetNewWorkingString(NewWorkStr: string);
 begin
-{
-  WorkStr := MuStrList. Itemes.Selected.Substring(1);
+  WorkStr := NewWorkStr.Substring(1);
   UpdateMuStr;
-}
 end;
 
 method MainPage.MuStrList_Tapped(sender: Object; e: Windows.UI.Xaml.Input.TappedRoutedEventArgs);
 begin
-  SetNewWorkingString;
+end;
+
+method MainPage.MuStrList_DoubleTapped(sender: Object; e: Windows.UI.Xaml.Input.DoubleTappedRoutedEventArgs);
+begin
+  SetNewWorkingString((sender as ListView).SelectedItem.ToString);
 end;
 
 end.
