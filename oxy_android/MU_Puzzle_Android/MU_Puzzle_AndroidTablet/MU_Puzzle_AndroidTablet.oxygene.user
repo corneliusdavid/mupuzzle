@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <AndroidDeviceName>my_avd</AndroidDeviceName>
-    <AndroidDevice>{emu}my_avd</AndroidDevice>
-    <CrossBox>Local</CrossBox>
-  </PropertyGroup>
-</Project>
