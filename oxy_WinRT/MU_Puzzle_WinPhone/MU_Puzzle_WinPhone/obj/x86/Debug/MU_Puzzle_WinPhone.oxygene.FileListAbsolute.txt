@@ -1,0 +1,17 @@
+C:\dev\mupuzzle\oxy_WinRT\MU_Puzzle_WinPhone\MU_Puzzle_WinPhone\Bin\x86\Debug\Assets\ApplicationIcon.png
+C:\dev\mupuzzle\oxy_WinRT\MU_Puzzle_WinPhone\MU_Puzzle_WinPhone\Bin\x86\Debug\Assets\Tiles\FlipCycleTileLarge.png
+C:\dev\mupuzzle\oxy_WinRT\MU_Puzzle_WinPhone\MU_Puzzle_WinPhone\Bin\x86\Debug\Assets\Tiles\FlipCycleTileMedium.png
+C:\dev\mupuzzle\oxy_WinRT\MU_Puzzle_WinPhone\MU_Puzzle_WinPhone\Bin\x86\Debug\Assets\Tiles\FlipCycleTileSmall.png
+C:\dev\mupuzzle\oxy_WinRT\MU_Puzzle_WinPhone\MU_Puzzle_WinPhone\Bin\x86\Debug\Assets\Tiles\IconicTileMediumLarge.png
+C:\dev\mupuzzle\oxy_WinRT\MU_Puzzle_WinPhone\MU_Puzzle_WinPhone\Bin\x86\Debug\Assets\Tiles\IconicTileSmall.png
+C:\dev\mupuzzle\oxy_WinRT\MU_Puzzle_WinPhone\MU_Puzzle_WinPhone\Bin\x86\Debug\MU_Puzzle_WinPhone.dll
+C:\dev\mupuzzle\oxy_WinRT\MU_Puzzle_WinPhone\MU_Puzzle_WinPhone\Bin\x86\Debug\AppManifest.xaml
+C:\dev\mupuzzle\oxy_WinRT\MU_Puzzle_WinPhone\MU_Puzzle_WinPhone\Bin\x86\Debug\Properties\WMAppManifest.xml
+C:\dev\mupuzzle\oxy_WinRT\MU_Puzzle_WinPhone\MU_Puzzle_WinPhone\Bin\x86\Debug\MU_Puzzle_WinPhone_Debug_x86.xap
+C:\dev\mupuzzle\oxy_WinRT\MU_Puzzle_WinPhone\MU_Puzzle_WinPhone\obj\x86\Debug\App.g.pas
+C:\dev\mupuzzle\oxy_WinRT\MU_Puzzle_WinPhone\MU_Puzzle_WinPhone\obj\x86\Debug\MainPage.g.pas
+C:\dev\mupuzzle\oxy_WinRT\MU_Puzzle_WinPhone\MU_Puzzle_WinPhone\obj\x86\Debug\MU_Puzzle_WinPhone.g.resources
+C:\dev\mupuzzle\oxy_WinRT\MU_Puzzle_WinPhone\MU_Puzzle_WinPhone\obj\x86\Debug\MU_Puzzle_WinPhone.Resources.AppResources.resources
+C:\dev\mupuzzle\oxy_WinRT\MU_Puzzle_WinPhone\MU_Puzzle_WinPhone\obj\x86\Debug\MU_Puzzle_WinPhone.oxygene.GenerateResource.Cache
+C:\dev\mupuzzle\oxy_WinRT\MU_Puzzle_WinPhone\MU_Puzzle_WinPhone\obj\x86\Debug\MU_Puzzle_WinPhone.dll
+C:\dev\mupuzzle\oxy_WinRT\MU_Puzzle_WinPhone\MU_Puzzle_WinPhone\obj\x86\Debug\XapCacheFile.xml

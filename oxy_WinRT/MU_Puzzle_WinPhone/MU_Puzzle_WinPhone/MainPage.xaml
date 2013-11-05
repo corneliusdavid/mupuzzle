@@ -1,0 +1,69 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="MU_Puzzle_WinPhone.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="The MU Puzzle" Style="{StaticResource PhoneTextNormalStyle}" Margin="0,10,0,10" HorizontalAlignment="Center" FontFamily="Times New Roman" FontSize="24" />
+            <TextBlock HorizontalAlignment="Left" FontFamily="Verdana" FontSize="20" Margin="21,0,0,0" >Current String:</TextBlock>
+            <TextBlock HorizontalAlignment="Stretch" FontFamily="Lucida Console" FontSize="16" x:Name="lblMuStr" Margin="42,5,0,0"  Height="60" >MI</TextBlock>
+            <TextBlock HorizontalAlignment="Left" FontFamily="Verdana" FontSize="18" Margin="21,5,0,0" >Goal String:</TextBlock>
+            <TextBlock HorizontalAlignment="Left" FontFamily="Lucida Console" FontSize="18" Margin="42,0,0,0" >MU</TextBlock>
+            <Grid HorizontalAlignment="Center" Margin="0,5,10,0" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition  />
+                    <RowDefinition  />
+                    <RowDefinition  />
+                    <RowDefinition  />
+                </Grid.RowDefinitions>
+
+                <TextBlock x:Name="lblRule1" FontFamily="Verdana" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0">Add &quot;U&quot; if last letter is &quot;I&quot;</TextBlock>
+                <TextBlock x:Name="lblRule2" FontFamily="Verdana" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1"  Grid.Row="1">Add everything after &quot;M&quot; to the end</TextBlock>
+                <TextBlock x:Name="lblRule3" FontFamily="Verdana" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1"  Grid.Row="2">Replace &quot;III&quot; with &quot;U&quot;</TextBlock>
+                <TextBlock x:Name="lblRule4" FontFamily="Verdana" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Grid.Row="3">Delete an occurance of &quot;UU&quot;</TextBlock>
+
+                <Button x:Name="btnRule1" Content="Rule 1" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0" Click="btnRule1_Click"/>
+                <Button x:Name="btnRule2" Content="Rule 2" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1" Click="btnRule2_Click" />
+                <Button x:Name="btnRule3" Content="Rule 3" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="2" Click="btnRule3_Click"/>
+                <Button x:Name="btnRule4" Content="Rule 4" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="3" Click="btnRule4_Click"/>
+            </Grid>
+            
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+
+        </Grid>
+
+        <!--Uncomment to see an alignment grid to help ensure your controls are
+            aligned on common boundaries.  The image has a top margin of -32px to
+            account for the System Tray. Set this to 0 (or remove the margin altogether)
+            if the System Tray is hidden.
+
+            Before shipping remove this XAML and the image itself.-->
+        <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
+    </Grid>
+
+</phone:PhoneApplicationPage>
