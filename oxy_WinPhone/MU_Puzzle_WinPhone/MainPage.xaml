@@ -34,16 +34,44 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                <Button x:Name="btnPrev" Content="Prev" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Click="btnPrev_Click" />
-                <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Click="btnOK_Click" />
-                <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="2" Click="btnCancel_Click" />
-                <Button x:Name="btnNext" Content="Next" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="3" Click="btnNext_Click" />
+                <Button x:Name="btnPrev" Content="Prev" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Click="btnPrev_Click" BorderThickness="0">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0,0.5" StartPoint="1,0.5">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="DarkOliveGreen" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Click="btnOK_Click" BorderThickness="0">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0,0.5" StartPoint="1,0.5">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="DarkOliveGreen" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="2" Click="btnCancel_Click" BorderThickness="0">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="DarkOliveGreen" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnNext" Content="Next" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="3" Click="btnNext_Click" BorderThickness="0">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="DarkOliveGreen" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
                 <TextBlock x:Name="lblSelect" FontStyle="Italic" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1"  Grid.ColumnSpan="2">Select:</TextBlock>
             </Grid>
-            <TextBlock HorizontalAlignment="Left" FontFamily="Verdana" FontSize="20" Margin="21,0,0,0" >Current String:</TextBlock>
-            <TextBlock HorizontalAlignment="Stretch" FontFamily="Lucida Console" FontSize="16" x:Name="lblMuStr" Margin="42,5,0,0"  Height="60" >MI</TextBlock>
-            <TextBlock HorizontalAlignment="Left" FontFamily="Verdana" FontSize="18" Margin="21,5,0,0" >Goal String:</TextBlock>
-            <TextBlock HorizontalAlignment="Left" FontFamily="Lucida Console" FontSize="18" Margin="42,0,0,0" >MU</TextBlock>
+            <TextBlock HorizontalAlignment="Left" FontFamily="Verdana" FontSize="18" Margin="21,0,0,0"  Foreground="LightBlue" >Current String:</TextBlock>
+            <TextBlock HorizontalAlignment="Stretch" FontFamily="Lucida Console" FontSize="16" x:Name="lblMuStr" Margin="42,5,0,0"  Height="60" Foreground="LightGoldenrodYellow" FontWeight="Bold"  >MI</TextBlock>
+            <TextBlock HorizontalAlignment="Left" FontFamily="Verdana" FontSize="18" Margin="21,5,0,0" Foreground="LightBlue" >Goal String:</TextBlock>
+            <TextBlock HorizontalAlignment="Left" FontFamily="Lucida Console" FontSize="18" Margin="42,5,0,0" Foreground="LightGoldenrodYellow" FontWeight="Bold" >MU</TextBlock>
             <Grid HorizontalAlignment="Center" Margin="0,5,10,0" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
@@ -61,10 +89,38 @@
                 <TextBlock x:Name="lblRule3" FontFamily="Verdana" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1"  Grid.Row="2">Replace &quot;III&quot; with &quot;U&quot;</TextBlock>
                 <TextBlock x:Name="lblRule4" FontFamily="Verdana" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Grid.Row="3">Delete an occurance of &quot;UU&quot;</TextBlock>
 
-                <Button x:Name="btnRule1" Content="Rule 1" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0" Click="btnRule1_Click"/>
-                <Button x:Name="btnRule2" Content="Rule 2" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1" Click="btnRule2_Click" />
-                <Button x:Name="btnRule3" Content="Rule 3" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="2" Click="btnRule3_Click"/>
-                <Button x:Name="btnRule4" Content="Rule 4" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="3" Click="btnRule4_Click"/>
+                <Button x:Name="btnRule1" Content="Rule 1" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0" Click="btnRule1_Click" BorderThickness="0">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="#FF0D38FB" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnRule2" Content="Rule 2" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1" Click="btnRule2_Click" BorderThickness="0">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="#FF0D38FB" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnRule3" Content="Rule 3" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="2" Click="btnRule3_Click" BorderThickness="0">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="#FF0D38FB" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnRule4" Content="Rule 4" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="3" Click="btnRule4_Click" BorderThickness="0">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="#FF0D38FB" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
             </Grid>
             
         </StackPanel>

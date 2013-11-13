@@ -8,12 +8,12 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d" >
 
-    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}" Margin="0,2,0,-2">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Background="Navy">
+        <StackPanel Grid.Row="0" Background="DarkSlateGray">
             <TextBlock HorizontalAlignment="Center" 
                        FontFamily="Times New Roman" FontSize="22" 
                        Margin="0,20,0,10">The MU Puzzle</TextBlock>
@@ -28,7 +28,14 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                <Button x:Name="btnPrev" Content="Prev" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Click="btnPrev_Click" />
+                <Button x:Name="btnPrev" Content="Prev" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Click="btnPrev_Click" >
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="#FF0D38FB" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
                 <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Click="btnOK_Click" />
                 <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="2" Click="btnCancel_Click" />
                 <Button x:Name="btnNext" Content="Next" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="3" Click="btnNext_Click" />
@@ -52,15 +59,43 @@
                     <RowDefinition Height="50" />
                 </Grid.RowDefinitions>
 
-                <TextBlock x:Name="lblRule1" FontFamily="Verdana" FontSize="16" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0">Add &quot;U&quot; if last letter is &quot;I&quot;</TextBlock>
+                <TextBlock x:Name="lblRule1" FontFamily="Verdana" FontSize="16" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0" >Add &quot;U&quot; if last letter is &quot;I&quot;</TextBlock>
                 <TextBlock x:Name="lblRule2" FontFamily="Verdana" FontSize="16" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0"  Grid.Row="1">Add everything after &quot;M&quot; to the end</TextBlock>
                 <TextBlock x:Name="lblRule3" FontFamily="Verdana" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="3"  Grid.Row="0">Replace &quot;III&quot; with &quot;U&quot;</TextBlock>
                 <TextBlock x:Name="lblRule4" FontFamily="Verdana" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="3" Grid.Row="1">Delete an occurance of &quot;UU&quot;</TextBlock>
 
-                <Button x:Name="btnRule1" Content="Rule 1" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" Click="btnRule1_Click"/>
-                <Button x:Name="btnRule2" Content="Rule 2" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" Click="btnRule2_Click"/>
-                <Button x:Name="btnRule3" Content="Rule 3" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="0" Click="btnRule3_Click"/>
-                <Button x:Name="btnRule4" Content="Rule 4" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1" Click="btnRule4_Click"/>
+                <Button x:Name="btnRule1" Content="Rule 1" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" Click="btnRule1_Click" BorderThickness="0">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="#FF0D38FB" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnRule2" Content="Rule 2" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" Click="btnRule2_Click" BorderThickness="0">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="#FF0D38FB" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnRule3" Content="Rule 3" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="0" Click="btnRule3_Click" BorderThickness="0">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="#FF0D38FB" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnRule4" Content="Rule 4" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1" Click="btnRule4_Click" BorderThickness="0">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="#FF0D38FB" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
             </Grid>
         </StackPanel>
         <ListView x:Name="MuStrList" Margin="25,10,25,10" FontFamily="Lucida Console" FontSize="14" VerticalAlignment="Stretch" Grid.Row="1" DoubleTapped="MuStrList_DoubleTapped" />
