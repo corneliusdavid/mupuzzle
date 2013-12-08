@@ -10,7 +10,9 @@
 *.dll
 *.sln
 *.suo
+*.xap
 *.zip
+UpgradeLog.*
 desktop.ini
 __history
 cs_wpf/MU_Puzzle_WPF/bin
@@ -24,5 +26,7 @@ oxy_wpf/MU_Puzzle_OxyWPF3/bin
 oxy_WinRT/MU_Puzzle_WinRT/obj
 oxy_WinRT/MU_Puzzle_WinRT/bin
 oxy_WinPhone/MU_Puzzle_WinPhone/obj
-oxy_WinPhone/MU_Puzzle_WinPhone/bin
+oxy_WinPhone/MU_Puzzle_WinPhone/Bin
+oxy_WinPhone/MU_Puzzle_WinPhone/Bin/ARM/Debug
+oxy_WinPhone/MU_Puzzle_WinPhone/Bin/x86/Debug
 
