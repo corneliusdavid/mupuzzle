@@ -37,7 +37,7 @@ type
     RuleMode: TRuleMode;
     SelectorPos: Integer;
     TheMuString: TMuString;
-    MuStrHistory: List<String>;
+    MuStrHistory: System.Collections.ObjectModel.ObservableCollection<String>;
     method UpdateMuStr(const OrigMuString: String);
     method ActivateSelBtns(const TurnOn: System.Windows.Visibility);
     method ActivateRuleBtns(const TurnOn: System.Windows.Visibility);
@@ -75,7 +75,7 @@ begin
   TheMuString.OnSetString += MuStringChanged;
   self.DataContext := TheMuString;
 
-  MuStrHistory := new List<String>;
+  MuStrHistory := new System.Collections.ObjectModel.ObservableCollection<String>;
   lbMuStrs.ItemsSource := MuStrHistory;
 end;
 
@@ -217,12 +217,6 @@ begin
       var ws2 := OrigMuString.Substring(SelectorPos);
       lblTmpMuStr.Content := 'M' + ws1 + '>' + ws2;
     end;      
-(*
-  { add strings to ListBox ignoring duplicates }
-  if (RuleMode = TRuleMode.eNoRule) and ((lbMuStrs.Items.Count = 0) or
-            (String.Compare(lblMuStr.Content.ToString, lbMuStrs.Items[lbMuStrs.Items.Count-1].ToString) <> 0)) then
-    lbMuStrs.Items.Add(lblMuStr.Content.ToString);
-*)
 end;
 
 method StackedWindow3.ActivateSelBtns(const TurnOn: System.Windows.Visibility);
@@ -332,8 +326,7 @@ end;
 
 method StackedWindow3.SetNewWorkingString;
 begin
-//  WorkStr := lbMuStrs.Items[lbMuStrs.SelectedIndex].ToString.Substring(1);
-//  UpdateMuStr;
+  TheMuString.TheString := lbMuStrs.Items[lbMuStrs.SelectedIndex].ToString;
 end;
     
 method StackedWindow3.lbMuStrs_MouseDoubleClick(sender: Object; e: System.Windows.Input.MouseButtonEventArgs);
