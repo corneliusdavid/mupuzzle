@@ -75,8 +75,6 @@
             <Label Content="{Binding ElementName=MuWindow, Path=ActualHeight}" FontFamily="Ariel" FontSize="8" HorizontalAlignment="Right" Margin="0,0,0,0" Foreground="Bisque" />
         </StackPanel>
 
-        <ListBox x:Name="lbMuStrs" FontFamily="Lucida Console" FontSize="12" Background="MistyRose" Margin="10,10,10,10" VerticalAlignment="Stretch" Grid.Row="1" 
-                 
-                 MouseDoubleClick="lbMuStrs_MouseDoubleClick"/>
+        <ListBox x:Name="lbMuStrs" FontFamily="Lucida Console" FontSize="12" Background="MistyRose" Margin="10,10,10,10" VerticalAlignment="Stretch" Grid.Row="1" MouseDoubleClick="lbMuStrs_MouseDoubleClick"/>
     </Grid>
 </Window>

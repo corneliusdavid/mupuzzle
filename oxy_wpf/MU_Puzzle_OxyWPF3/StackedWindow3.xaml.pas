@@ -76,6 +76,7 @@ begin
   self.DataContext := TheMuString;
 
   MuStrHistory := new List<String>;
+  lbMuStrs.ItemsSource := MuStrHistory;
 end;
 
 method StackedWindow3.btnRule1_Click(sender: Object; e: System.Windows.RoutedEventArgs);
