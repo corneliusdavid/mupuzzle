@@ -15,7 +15,7 @@ uses
   MU_PuzzleClasses;
 
 type
-  TMultiStringConverter = public class(IMultiValueConverter)
+  TLabeledValueConverter = public class(IMultiValueConverter)
   public
     method Convert(values: array of System.Object; targetType: System.Type; parameter: System.Object; culture: System.Globalization.CultureInfo): System.Object; 
     method ConvertBack(value: System.Object; targetTypes: array of System.Type; parameter: System.Object; culture: System.Globalization.CultureInfo): array of System.Object; 
@@ -50,6 +50,21 @@ type
   
 implementation
 
+{--- TMultiStringConverter ---}
+
+method TLabeledValueConverter.Convert(values: array of Object; targetType: &Type; parameter: Object; culture: System.Globalization.CultureInfo): Object;
+// expects values in the form "Label: ", XXX  where XXX is a numeric value
+begin
+  Result := String(values[0]) + values[1].ToString;
+end;
+
+method TLabeledValueConverter.ConvertBack(value: Object; targetTypes: array of &Type; parameter: Object; culture: System.Globalization.CultureInfo): array of Object;
+begin
+  raise new Exception('not supported');
+end;
+
+{--- TWindowsDesktop ---}
+
 constructor TWindowsDesktop;
 begin
   InitializeComponent();
@@ -69,10 +84,7 @@ begin
   SelectGrid.Visibility := TurnOn;
 
   if (TurnOn = System.Windows.Visibility.Visible) then 
-    if MyMuString.RuleMode = TRuleMode.eRule3 then
-      lblSelect.Content := "Select: " + "III"
-    else
-      lblSelect.Content := "Select: " + "UU"
+    lblSelect.Content := "Select: " + MyMuString.GetRuleStr(MyMuString.RuleMode);
 end;
 
 method TWindowsDesktop.ActivateRuleBtns(TurnOn: Visibility);
@@ -157,7 +169,7 @@ begin
   else begin
     // just 1? then just replace it
     if count = 1 then
-      MyMuString.DeleteUU(MyMuString.MuString.IndexOf(MyMuString.GetRuleStr(TRuleMode.eRule4)) + 1)
+      MyMuString.DeleteUU(MyMuString.MuString.IndexOf('UU'))
     else begin
       // it looks like we'll have to let the user select which occurance
       MyMuString.RuleMode := TRuleMode.eRule4 ;
@@ -240,28 +252,6 @@ begin
     ActivateRuleBtns(System.Windows.Visibility.Hidden);
     MyMuString.FirstSelector;
   end;
-end;
-
-method TMultiStringConverter.Convert(values: array of Object; 
-                                     targetType: &Type; 
-                                     parameter: Object; 
-                                     culture: System.Globalization.CultureInfo): Object;
-{
-var
-  i: Integer;
-}
-begin
-  Result := String(values[0]) + String(values[1]);
-  {
-  Result := '';
-  for i := 0 to values.Length - 1 do
-    Result := Result + values[i];
-  }
-end;
-
-method TMultiStringConverter.ConvertBack(value: Object; targetTypes: array of &Type; parameter: Object; culture: System.Globalization.CultureInfo): array of Object;
-begin
-  raise new Exception('cannot convert a string back to multiple objects');
 end;
 
 end.
