@@ -29,6 +29,7 @@
             <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="Width" Value="75"/>
         </Style>
+        
     </Window.Resources>
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,5,10,0">
         <Grid.OpacityMask>
@@ -98,7 +99,14 @@
                 <Button x:Name="btnRule4" Content="Rule 4" Style="{StaticResource ResourceKey=RuleBtn}" Grid.Column="2" Grid.Row="1" Click="btnRule4_Click"/>
             </Grid>
 
-            <Label Content="{Binding ElementName=MuWindow, Path=ActualHeight}" FontFamily="Ariel" FontSize="8" HorizontalAlignment="Right" Margin="0,0,0,0" Foreground="Bisque" />
+            <TextBlock FontFamily="Ariel" FontSize="8" HorizontalAlignment="Right" Margin="0,0,0,0" Foreground="Bisque" >
+                <TextBlock.Text>
+                    <MultiBinding Converter="TMultiStringConverter">
+                        <Binding Source="test: " />
+                        <Binding ElementName="MuWindow" Path="ActualHeight" />            
+                    </MultiBinding>
+                </TextBlock.Text>
+            </TextBlock> 
         </StackPanel>
 
         <ListBox x:Name="lbMuStrs" FontFamily="Lucida Console" FontSize="12" Background="MistyRose" Margin="10,10,10,10" VerticalAlignment="Stretch" Grid.Row="1" MouseDoubleClick="lbMuStrs_MouseDoubleClick"/>

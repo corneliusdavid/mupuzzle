@@ -15,6 +15,12 @@ uses
   MU_PuzzleClasses;
 
 type
+  TMultiStringConverter = public class(IMultiValueConverter)
+  public
+    method Convert(values: array of System.Object; targetType: System.Type; parameter: System.Object; culture: System.Globalization.CultureInfo): System.Object; 
+    method ConvertBack(value: System.Object; targetTypes: array of System.Type; parameter: System.Object; culture: System.Globalization.CultureInfo): array of System.Object; 
+  end;
+
   TWindowsDesktop = public partial class(System.Windows.Window)
   private
     MyMuString: TMuString;
@@ -234,6 +240,28 @@ begin
     ActivateRuleBtns(System.Windows.Visibility.Hidden);
     MyMuString.FirstSelector;
   end;
+end;
+
+method TMultiStringConverter.Convert(values: array of Object; 
+                                     targetType: &Type; 
+                                     parameter: Object; 
+                                     culture: System.Globalization.CultureInfo): Object;
+{
+var
+  i: Integer;
+}
+begin
+  Result := String(values[0]) + String(values[1]);
+  {
+  Result := '';
+  for i := 0 to values.Length - 1 do
+    Result := Result + values[i];
+  }
+end;
+
+method TMultiStringConverter.ConvertBack(value: Object; targetTypes: array of &Type; parameter: Object; culture: System.Globalization.CultureInfo): array of Object;
+begin
+  raise new Exception('cannot convert a string back to multiple objects');
 end;
 
 end.
