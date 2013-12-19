@@ -19,7 +19,7 @@ type
   TMuString = class
   private
     fTheString: String := 'MI';
-    fOnSetName: OnSetStringDelegate;
+    fOnSetString: OnSetStringDelegate;
   protected
     method SetTheString(const Value: String);
   public
@@ -28,7 +28,7 @@ type
     method Replace3IWithU(const StartPos: Integer);
     method DeleteUU(const StartPos: Integer);
     property TheString: String read fTheString write SetTheString; notify;
-    event OnSetString: OnSetStringDelegate delegate fOnSetName;  
+    event OnSetString: OnSetStringDelegate delegate fOnSetString;  
   end;
 
   TRuleMode = (eNoRule, eRule3, eRule4);
@@ -371,8 +371,8 @@ end;
 method TMuString.SetTheString(const Value: String);
 begin
   fTheString := Value;
-  if assigned(fOnSetName) then
-    fOnSetName(Value);
+  if assigned(fOnSetString) then
+    fOnSetString(Value);
 end;
 
 end.

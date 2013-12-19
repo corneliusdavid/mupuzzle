@@ -29,4 +29,7 @@ oxy_WinPhone/MU_Puzzle_WinPhone/obj
 oxy_WinPhone/MU_Puzzle_WinPhone/Bin
 oxy_WinPhone/MU_Puzzle_WinPhone/Bin/ARM/Debug
 oxy_WinPhone/MU_Puzzle_WinPhone/Bin/x86/Debug
-
+oxy_MultiPlatform/MU_PuzzleLib/MU_PuzzleClasses/bin
+oxy_MultiPlatform/MU_PuzzleLib/MU_PuzzleClasses/obj
+oxy_MultiPlatform/MU_PuzzleWPF/bin
+oxy_MultiPlatform/MU_PuzzleWPF/obj
