@@ -4,18 +4,21 @@
     <ProductVersion>3.5</ProductVersion>
     <ProjectGuid>{06071b46-8aeb-4707-8c18-a5ec2189625c}</ProjectGuid>
     <RootNamespace>MU_PuzzleWPF</RootNamespace>
-    <OutputType>winexe</OutputType>
+    <OutputType>WinExe</OutputType>
     <AssemblyName>MU_PuzzleWPF</AssemblyName>
     <AllowGlobals>False</AllowGlobals>
     <AllowLegacyWith>False</AllowLegacyWith>
     <AllowLegacyOutParams>False</AllowLegacyOutParams>
     <AllowLegacyCreate>False</AllowLegacyCreate>
     <AllowUnsafeCode>False</AllowUnsafeCode>
-    <ApplicationIcon>Properties\App.ico</ApplicationIcon>
+    <ApplicationIcon>..\..\..\images\Aha-soft\ico\172.ico</ApplicationIcon>
     <ProjectTypeGuids>{89896941-7261-4476-8385-4DA3CE9FDB83};{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{656346D9-4656-40DA-A068-22D5425D4639}</ProjectTypeGuids>
     <Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <Name>MU_PuzzleWPF</Name>
+    <DefaultUses />
+    <StartupClass />
+    <InternalAssemblyName />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <Conditionals>DEBUG;TRACE</Conditionals>
