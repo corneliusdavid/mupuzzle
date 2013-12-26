@@ -20,6 +20,7 @@
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <EnableUnmanagedDebugging>True</EnableUnmanagedDebugging>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <CpuType>AnyCPU</CpuType>
@@ -39,13 +40,12 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
-    <OutputPath>bin\ARM\Release\</OutputPath>
-    <GeneratePDB>True</GeneratePDB>
-    <GenerateMDB>False</GenerateMDB>
+    <OutputPath>C:\Users\David\SkyDrive\Documents\dev\mu_puzzle\arm</OutputPath>
     <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
-    <Optimize>true</Optimize>
-    <CpuType>ARM</CpuType>
+    <CpuType>arm</CpuType>
     <Prefer32Bit>true</Prefer32Bit>
+    <XmlDocWarningLevel>WarningOnPublicMembers</XmlDocWarningLevel>
+    <CrossPlatformCompatibilityHints>False</CrossPlatformCompatibilityHints>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -142,5 +142,39 @@
   <Import Project="$(MSBuildExtensionsPath)\RemObjects Software\Oxygene\RemObjects.Oxygene.Echoes.WinRT.targets" />
   <PropertyGroup>
     <PreBuildEvent />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release for Surface|AnyCPU' ">
+    <CpuType>AnyCPU</CpuType>
+    <GeneratePDB>True</GeneratePDB>
+    <GenerateMDB>False</GenerateMDB>
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <OutputPath>bin\Release for Surface\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release for Surface|ARM'">
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <CpuType>arm</CpuType>
+    <Prefer32Bit>true</Prefer32Bit>
+    <OutputPath>C:\Users\David\SkyDrive\Documents\dev\mu_puzzle\arm</OutputPath>
+    <XmlDocWarningLevel>WarningOnPublicMembers</XmlDocWarningLevel>
+    <CrossPlatformCompatibilityHints>False</CrossPlatformCompatibilityHints>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release for Surface|x64'">
+    <GeneratePDB>True</GeneratePDB>
+    <GenerateMDB>False</GenerateMDB>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <CpuType>x64</CpuType>
+    <Prefer32Bit>true</Prefer32Bit>
+    <OutputPath>bin\Release for Surface\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release for Surface|x86'">
+    <GeneratePDB>True</GeneratePDB>
+    <GenerateMDB>False</GenerateMDB>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <CpuType>x86</CpuType>
+    <Prefer32Bit>true</Prefer32Bit>
+    <OutputPath>bin\Release for Surface\</OutputPath>
   </PropertyGroup>
 </Project>
