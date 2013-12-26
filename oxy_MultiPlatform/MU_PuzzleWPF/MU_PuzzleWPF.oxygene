@@ -11,7 +11,8 @@
     <AllowLegacyOutParams>False</AllowLegacyOutParams>
     <AllowLegacyCreate>False</AllowLegacyCreate>
     <AllowUnsafeCode>False</AllowUnsafeCode>
-    <ApplicationIcon>..\..\..\images\Aha-soft\ico\172.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
     <ProjectTypeGuids>{89896941-7261-4476-8385-4DA3CE9FDB83};{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{656346D9-4656-40DA-A068-22D5425D4639}</ProjectTypeGuids>
     <Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
