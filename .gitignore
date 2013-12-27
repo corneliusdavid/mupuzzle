@@ -35,3 +35,10 @@ oxy_MultiPlatform/MU_PuzzleWPF/bin
 oxy_MultiPlatform/MU_PuzzleWPF/obj
 mupuzzle/oxy_MultiPlatform/MU_PuzzleWin8/bin
 mupuzzle/oxy_MultiPlatform/MU_PuzzleWin8/obj
+mupuzzle/oxy_MultiPlatform/MU_PuzzleWin8/bin/x86
+mupuzzle/oxy_MultiPlatform/MU_PuzzleWin8/bin/x86/Debug
+mupuzzle/oxy_MultiPlatform/MU_PuzzleWin8/bin/x86/Debug/AppX
+mupuzzle/oxy_MultiPlatform/MU_PuzzleWin8/bin/x86/Debug/Common
+mupuzzle/oxy_MultiPlatform/MU_PuzzleWin8/bin/x86/Debug/AppX/Assets
+mupuzzle/oxy_MultiPlatform/MU_PuzzleWin8/bin/x86/Debug/AppX/Common
+
