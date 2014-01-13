@@ -27,7 +27,6 @@ type
     WorkStr: String;
     RuleMode: TRuleMode;
     SelectorPos: Integer;
-    LastStrAdded: String;
     method UpdateMuStr;
     method AddU;
     method DuplicateStr;
@@ -62,7 +61,7 @@ begin
 
   RuleMode := TRuleMode.eNoRule;
   WorkStr := 'I';
-  LastStrAdded := '';
+  //LastStrAdded := '';
   UpdateMuStr;
 end;
 
@@ -78,15 +77,16 @@ begin
       var ws2 := WorkStr.Substring(SelectorPos);
       lblMuStr.Text := 'M' + ws1 + '>' + ws2;
     end;      
-(*
+
   { add strings to ListBox ignoring duplicates }
-  if (RuleMode = TRuleMode.eNoRule) and ((MuStrList.Items.Count = 0) or
+(*
+      if (RuleMode = TRuleMode.eNoRule) and ((lbMuStrs Items.Count = 0) or
      (String.Compare(lblMuStr.Text, LastStrAdded) <> 0)) then begin
-    MuStrList.Items.Add(lblMuStr.Text);
+    lbMuStrs.Items.Add(lblMuStr.Text);
     LastStrAdded := lblMuStr.Text;
   end;
 *)
-end;
+    end;
 
 method MainPage.AddU;
 begin
@@ -119,10 +119,9 @@ begin
   end;
 
   { if none, put up a message }
-  if count = 0 then begin
-    var msg := MessageBox.Show('There is no occurance of "III" in the current string.');
-    //msg.ShowAsync;
-  end else begin
+  if count = 0 then
+    MessageBox.Show('There is no occurance of "III" in the current string.')
+  else begin
     { if one, replace it automatically }
     if count = 1 then
       Replace3IWithU(WorkStr.IndexOf('III'))
@@ -162,10 +161,9 @@ begin
   end;
 
   // none?  just show a message 
-  if count = 0 then begin
-    var msg := MessageBox.Show('There is no occurance of ''UU'' in the current string.');
-    //msg.ShowAsync;
-  end else begin
+  if count = 0 then 
+    MessageBox.Show('There is no occurance of "UU" in the current string.')
+  else begin
     // just 1? then just replace it
     if count = 1 then
       DeleteUU(WorkStr.IndexOf('UU'))
