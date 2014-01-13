@@ -25,6 +25,7 @@ oxy_wpf/MU_Puzzle_OxyWPF3/obj
 oxy_wpf/MU_Puzzle_OxyWPF3/bin
 oxy_WinRT/MU_Puzzle_WinRT/obj
 oxy_WinRT/MU_Puzzle_WinRT/bin
+oxy_WinRT/MU_Puzzle_WinRT/Backup
 oxy_WinPhone/MU_Puzzle_WinPhone/obj
 oxy_WinPhone/MU_Puzzle_WinPhone/Bin
 oxy_WinPhone/MU_Puzzle_WinPhone/Bin/ARM/Debug
@@ -41,4 +42,10 @@ oxy_MultiPlatform/MU_PuzzleWin8/bin/x86/Debug/AppX
 oxy_MultiPlatform/MU_PuzzleWin8/bin/x86/Debug/Common
 oxy_MultiPlatform/MU_PuzzleWin8/bin/x86/Debug/AppX/Assets
 oxy_MultiPlatform/MU_PuzzleWin8/bin/x86/Debug/AppX/Common
+oxy_MultiPlatform/MU_PuzzleWinPhone8/bin
+oxy_MultiPlatform/MU_PuzzleWinPhone8/obj
+oxy_MultiPlatform/MU_PuzzleWinPhone8/obj/x86
+oxy_MultiPlatform/MU_PuzzleWinPhone8/obj/x86/Debug
+oxy_MultiPlatform/MU_PuzzleWinPhone8/obj/Debug
+oxy_MultiPlatform/MU_PuzzlePhoneClass/obj/x86/Debug
 
