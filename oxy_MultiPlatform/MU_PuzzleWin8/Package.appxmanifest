@@ -1,39 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
-
-  <Identity Name="1372daa2-3e6c-4c92-a4c8-33ea6bda4a5f"
-            Publisher="CN=David"
-            Version="1.0.0.0" />
-
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
+  <Identity Name="1372daa2-3e6c-4c92-a4c8-33ea6bda4a5f" Publisher="CN=David" Version="1.1.0.0" />
   <Properties>
     <DisplayName>MU_PuzzleWin8</DisplayName>
     <PublisherDisplayName>David</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
-
   <Prerequisites>
-    <OSMinVersion>6.2.0</OSMinVersion>
-    <OSMaxVersionTested>6.2.0</OSMaxVersionTested>
+    <OSMinVersion>6.3.0</OSMinVersion>
+    <OSMaxVersionTested>6.3.0</OSMaxVersionTested>
   </Prerequisites>
-
   <Resources>
-    <Resource Language="x-generate"/>
+    <Resource Language="x-generate" />
   </Resources>
-
   <Applications>
-    <Application Id="App"
-        Executable="$targetnametoken$.exe"
-        EntryPoint="MU_PuzzleWin8.App">
-        <VisualElements
-            DisplayName="MU_PuzzleWin8"
-            Logo="Assets\Logo.png"
-            SmallLogo="Assets\SmallLogo.png"
-            Description="MU_PuzzleWin8"
-            ForegroundText="light"
-            BackgroundColor="#4b5195">
-            <DefaultTile ShowName="allLogos" WideLogo="Assets\WideLogo.png" />
-            <SplashScreen Image="Assets\SplashScreen.png" />
-        </VisualElements>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="MU_PuzzleWin8.App">
+      <m2:VisualElements DisplayName="MU_PuzzleWin8" Description="MU_PuzzleWin8" BackgroundColor="#4b5195" ForegroundText="light" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png">
+        <m2:DefaultTile Wide310x150Logo="Assets\WideLogo.png">
+          <m2:ShowNameOnTiles>
+            <m2:ShowOn Tile="square150x150Logo" />
+            <m2:ShowOn Tile="wide310x150Logo" />
+          </m2:ShowNameOnTiles>
+        </m2:DefaultTile>
+        <m2:SplashScreen Image="Assets\SplashScreen.png" />
+      </m2:VisualElements>
     </Application>
   </Applications>
   <Capabilities>

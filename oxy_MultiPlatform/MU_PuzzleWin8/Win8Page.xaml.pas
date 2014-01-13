@@ -24,19 +24,6 @@ uses
 /// An empty page that can be used on its own or navigated to within a Frame.
 /// </summary>
 type
-  TWidthConverter = public class(IValueConverter)
-  public
-    method Convert(value: System.Object; targetType: System.Type; parameter: System.Object; language: System.String): System.Object; 
-    method ConvertBack(value: System.Object; targetType: System.Type; parameter: System.Object; language: System.String): System.Object; 
-  end;
-
-  THeightConverter = public class(IValueConverter)
-  public
-    method Convert(value: System.Object; targetType: System.Type; parameter: System.Object; language: System.String): System.Object; 
-    method ConvertBack(value: System.Object; targetType: System.Type; parameter: System.Object; language: System.String): System.Object; 
-  end;
-
-
   TWin8Page = partial class(Page)
   private
     MyMuString: TMuString;
@@ -57,7 +44,6 @@ type
     method btnOK_Click(sender: Object; e: Windows.UI.Xaml.RoutedEventArgs);
     method btnPrev_Click(sender: Object; e: Windows.UI.Xaml.RoutedEventArgs);
     method btnNext_Click(sender: Object; e: Windows.UI.Xaml.RoutedEventArgs);
-   // method lbMuStrs_MouseDoubleClick(sender: Object; e: System.Windows.Input.MouseButtonEventArgs);
     method MuStringChanged(const aNewString: String);
     method RuleModeChanged(const aNewRuleMode: TRuleMode);
   public
@@ -74,30 +60,6 @@ type
 
 implementation
 
-
-{--- TWidthConverter---}
-
-method TWidthConverter.Convert(value: System.Object; targetType: System.Type; parameter: System.Object; language: System.String): System.Object; 
-begin
-  Result := 'Width: ' + String(value);
-end;
-
-method TWidthConverter.ConvertBack(value: System.Object; targetType: System.Type; parameter: System.Object; language: System.String): System.Object; 
-begin
-  // not used
-end;
-
-{--- THeightConverter---}
-
-method THeightConverter.Convert(value: System.Object; targetType: System.Type; parameter: System.Object; language: System.String): System.Object; 
-begin
-  Result := 'Height: ' + String(value);
-end;
-
-method THeightConverter.ConvertBack(value: System.Object; targetType: System.Type; parameter: System.Object; language: System.String): System.Object; 
-begin
-  // not used
-end;
 
 {--- TWin8Page ---}
 
@@ -270,12 +232,6 @@ begin
   MyMuString.NextSelector;
 end;
 
-{
-method TWin8Page.lbMuStrs_MouseDoubleClick(sender: Object; e: System.Windows.Input.MouseButtonEventArgs);
-begin
-  SetNewWorkingString;
-end;
-}
 
 method TWin8Page.MuStringChanged(aNewString: String);
 begin
