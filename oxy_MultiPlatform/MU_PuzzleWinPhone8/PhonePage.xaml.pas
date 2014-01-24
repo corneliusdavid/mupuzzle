@@ -40,15 +40,13 @@ type
     method lbMuStrs_MouseDoubleClick(sender: Object; e: System.Windows.Input.MouseButtonEventArgs);
     method MuStringChanged(const aNewString: String);
     method RuleModeChanged(const aNewRuleMode: TRuleMode);
-
-  public
-    // Constructor
-    constructor ;
-
-  private
-    //frandom : Random := new Random();
-    // Sample code for building a localized ApplicationBar
+    method HistorySelectionChanged(sender: System.Object; e: SelectionChangedEventArgs);
     method BuildLocalizedApplicationBar;
+    method HistoryMouseEnter(sender: System.Object; e: System.Windows.Input.MouseEventArgs);
+    method appBarCancelBtnClick(sender: Object; e: EventArgs);
+    method appBarApplyBtnClick(sender: Object; e: EventArgs);
+  public
+    constructor;
   end;
 
 
@@ -76,10 +74,17 @@ begin
   // Set the page's ApplicationBar to a new instance of ApplicationBar.
   ApplicationBar := new ApplicationBar();
 
-  // Create a new button and set the text value to the localized string from AppResources.
-  var appBarButton: ApplicationBarIconButton := new ApplicationBarIconButton(new Uri('/Assets/AppBar/appbar.add.rest.png', UriKind.Relative));
-  appBarButton.Text := AppResources.AppBarButtonText;
-  ApplicationBar.Buttons.Add(appBarButton);
+  var appBarApplyBtn: ApplicationBarIconButton := new ApplicationBarIconButton(new Uri('/Assets/AppBar/appbar.add.rest.png', UriKind.Relative));
+  appBarApplyBtn.Text := AppResources.AppBarApplyText;
+  appBarApplyBtn.Click += appBarApplyBtnClick;
+  
+  var appBarCancelBtn: ApplicationBarIconButton := new ApplicationBarIconButton(new Uri('/Assets/AppBar/appbar.add.rest.png', UriKind.Relative));
+  appBarCancelBtn.Text := AppResources.AppBarCancelText;
+  appBarCancelBtn.Click += appBarCancelBtnClick;
+  
+  ApplicationBar.Buttons.Add(appBarApplyBtn);
+  ApplicationBar.Buttons.Add(appBarCancelBtn);
+
   ApplicationBar.IsVisible := False;
 
   // Create a new menu item with the localized string from AppResources.
@@ -260,6 +265,27 @@ begin
     ActivateRuleBtns(System.Windows.Visibility.Collapsed);
     MyMuString.FirstSelector;
   end;
+end;
+
+method PhonePage.HistorySelectionChanged(sender: System.Object; e: SelectionChangedEventArgs);
+begin
+  if lbMuStrs.SelectedItem <> nil then
+    ApplicationBar.IsVisible := True;
+end;
+
+method PhonePage.HistoryMouseEnter(sender: System.Object; e: System.Windows.Input.MouseEventArgs);
+begin
+  ApplicationBar.IsVisible := True;
+end;
+
+method PhonePage.appBarApplyBtnClick(sender: Object; e: EventArgs);
+begin
+  SetNewWorkingString;
+end;
+
+method PhonePage.appBarCancelBtnClick(sender: Object; e: EventArgs);
+begin
+  ApplicationBar.IsVisible := False;
 end;
 
 end.
