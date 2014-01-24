@@ -12,6 +12,7 @@
 *.suo
 *.xap
 *.zip
+*.xap
 UpgradeLog.*
 desktop.ini
 __history
