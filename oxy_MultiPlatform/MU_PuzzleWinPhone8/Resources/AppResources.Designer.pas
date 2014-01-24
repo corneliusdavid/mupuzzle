@@ -37,7 +37,8 @@ type
         class method get_ResourceManager: System.Resources.ResourceManager;
         class method get_Culture: System.Globalization.CultureInfo;
         class method set_Culture(value: System.Globalization.CultureInfo);
-        class method get_AppBarButtonText: System.String;
+        class method get_AppBarApplyText: System.String;
+        class method get_AppBarCancelText: System.String;
         class method get_ApplicationTitle: System.String;
         class method get_ResourceFlowDirection: System.String;
         class method get_ResourceLanguage: System.String;
@@ -49,7 +50,8 @@ type
         class property ResourceManager: System.Resources.ResourceManager read get_ResourceManager;
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         class property Culture: System.Globalization.CultureInfo read get_Culture write set_Culture;
-        class property AppBarButtonText: System.String read get_AppBarButtonText;
+        class property AppBarApplyText: System.String read get_AppBarApplyText;
+        class property AppBarCancelText: System.String read get_AppBarCancelText;
         class property ApplicationTitle: System.String read get_ApplicationTitle;
         class property ResourceFlowDirection: System.String read get_ResourceFlowDirection;
         class property ResourceLanguage: System.String read get_ResourceLanguage;
@@ -82,9 +84,14 @@ begin
     resourceCulture := value;
 end;
 
-class method AppResources.get_AppBarButtonText: System.String;
+class method AppResources.get_AppBarApplyText: System.String;
 begin
-    exit(ResourceManager.GetString('AppBarButtonText', resourceCulture));
+    exit(ResourceManager.GetString('AppBarApplyText', resourceCulture));
+end;
+
+class method AppResources.get_AppBarCancelText: System.String;
+begin
+    exit(ResourceManager.GetString('AppBarCancelText', resourceCulture));
 end;
 
 class method AppResources.get_ApplicationTitle: System.String;

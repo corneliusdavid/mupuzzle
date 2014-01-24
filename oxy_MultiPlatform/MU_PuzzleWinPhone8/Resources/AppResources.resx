@@ -128,7 +128,10 @@
   <data name="ApplicationTitle" xml:space="preserve">
     <value>MU Puzzle</value>
   </data>
-  <data name="AppBarButtonText" xml:space="preserve">
+  <data name="AppBarApplyText" xml:space="preserve">
     <value>Apply</value>
+  </data>
+  <data name="AppBarCancelText" xml:space="preserve">
+    <value>Cancel</value>
   </data>
 </root>
