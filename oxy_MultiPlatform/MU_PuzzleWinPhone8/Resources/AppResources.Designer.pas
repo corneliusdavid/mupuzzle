@@ -40,8 +40,23 @@ type
         class method get_AppBarApplyText: System.String;
         class method get_AppBarCancelText: System.String;
         class method get_ApplicationTitle: System.String;
+        class method get_BtnCancelLabel: System.String;
+        class method get_BtnNextLabel: System.String;
+        class method get_BtnOKLabel: System.String;
+        class method get_BtnPrevLabel: System.String;
+        class method get_CurrStringText: System.String;
+        class method get_GoalStringText: System.String;
+        class method get_HistoryText: System.String;
         class method get_ResourceFlowDirection: System.String;
         class method get_ResourceLanguage: System.String;
+        class method get_Rule1Btn: System.String;
+        class method get_Rule1Label: System.String;
+        class method get_Rule2Btn: System.String;
+        class method get_Rule2Label: System.String;
+        class method get_Rule3Btn: System.String;
+        class method get_Rule3Label: System.String;
+        class method get_Rule4Btn: System.String;
+        class method get_Rule4Label: System.String;
     assembly 
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute('Microsoft.Performance', 'CA1811:AvoidUncalledPrivateCode')]
         constructor;
@@ -53,8 +68,23 @@ type
         class property AppBarApplyText: System.String read get_AppBarApplyText;
         class property AppBarCancelText: System.String read get_AppBarCancelText;
         class property ApplicationTitle: System.String read get_ApplicationTitle;
+        class property BtnCancelLabel: System.String read get_BtnCancelLabel;
+        class property BtnNextLabel: System.String read get_BtnNextLabel;
+        class property BtnOKLabel: System.String read get_BtnOKLabel;
+        class property BtnPrevLabel: System.String read get_BtnPrevLabel;
+        class property CurrStringText: System.String read get_CurrStringText;
+        class property GoalStringText: System.String read get_GoalStringText;
+        class property HistoryText: System.String read get_HistoryText;
         class property ResourceFlowDirection: System.String read get_ResourceFlowDirection;
         class property ResourceLanguage: System.String read get_ResourceLanguage;
+        class property Rule1Btn: System.String read get_Rule1Btn;
+        class property Rule1Label: System.String read get_Rule1Label;
+        class property Rule2Btn: System.String read get_Rule2Btn;
+        class property Rule2Label: System.String read get_Rule2Label;
+        class property Rule3Btn: System.String read get_Rule3Btn;
+        class property Rule3Label: System.String read get_Rule3Label;
+        class property Rule4Btn: System.String read get_Rule4Btn;
+        class property Rule4Label: System.String read get_Rule4Label;
     end;
     
 implementation
@@ -99,6 +129,41 @@ begin
     exit(ResourceManager.GetString('ApplicationTitle', resourceCulture));
 end;
 
+class method AppResources.get_BtnCancelLabel: System.String;
+begin
+    exit(ResourceManager.GetString('BtnCancelLabel', resourceCulture));
+end;
+
+class method AppResources.get_BtnNextLabel: System.String;
+begin
+    exit(ResourceManager.GetString('BtnNextLabel', resourceCulture));
+end;
+
+class method AppResources.get_BtnOKLabel: System.String;
+begin
+    exit(ResourceManager.GetString('BtnOKLabel', resourceCulture));
+end;
+
+class method AppResources.get_BtnPrevLabel: System.String;
+begin
+    exit(ResourceManager.GetString('BtnPrevLabel', resourceCulture));
+end;
+
+class method AppResources.get_CurrStringText: System.String;
+begin
+    exit(ResourceManager.GetString('CurrStringText', resourceCulture));
+end;
+
+class method AppResources.get_GoalStringText: System.String;
+begin
+    exit(ResourceManager.GetString('GoalStringText', resourceCulture));
+end;
+
+class method AppResources.get_HistoryText: System.String;
+begin
+    exit(ResourceManager.GetString('HistoryText', resourceCulture));
+end;
+
 class method AppResources.get_ResourceFlowDirection: System.String;
 begin
     exit(ResourceManager.GetString('ResourceFlowDirection', resourceCulture));
@@ -107,6 +172,46 @@ end;
 class method AppResources.get_ResourceLanguage: System.String;
 begin
     exit(ResourceManager.GetString('ResourceLanguage', resourceCulture));
+end;
+
+class method AppResources.get_Rule1Btn: System.String;
+begin
+    exit(ResourceManager.GetString('Rule1Btn', resourceCulture));
+end;
+
+class method AppResources.get_Rule1Label: System.String;
+begin
+    exit(ResourceManager.GetString('Rule1Label', resourceCulture));
+end;
+
+class method AppResources.get_Rule2Btn: System.String;
+begin
+    exit(ResourceManager.GetString('Rule2Btn', resourceCulture));
+end;
+
+class method AppResources.get_Rule2Label: System.String;
+begin
+    exit(ResourceManager.GetString('Rule2Label', resourceCulture));
+end;
+
+class method AppResources.get_Rule3Btn: System.String;
+begin
+    exit(ResourceManager.GetString('Rule3Btn', resourceCulture));
+end;
+
+class method AppResources.get_Rule3Label: System.String;
+begin
+    exit(ResourceManager.GetString('Rule3Label', resourceCulture));
+end;
+
+class method AppResources.get_Rule4Btn: System.String;
+begin
+    exit(ResourceManager.GetString('Rule4Btn', resourceCulture));
+end;
+
+class method AppResources.get_Rule4Label: System.String;
+begin
+    exit(ResourceManager.GetString('Rule4Label', resourceCulture));
 end;
 
 end.

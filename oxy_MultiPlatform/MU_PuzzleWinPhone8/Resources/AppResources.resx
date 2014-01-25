@@ -134,4 +134,49 @@
   <data name="AppBarCancelText" xml:space="preserve">
     <value>Cancel</value>
   </data>
+  <data name="Rule1Btn" xml:space="preserve">
+    <value>Rule 1</value>
+  </data>
+  <data name="Rule1Label" xml:space="preserve">
+    <value>Add "U" if last letter is "I"</value>
+  </data>
+  <data name="Rule2Btn" xml:space="preserve">
+    <value>Rule 2</value>
+  </data>
+  <data name="Rule2Label" xml:space="preserve">
+    <value>Add everything after "M" to the end</value>
+  </data>
+  <data name="Rule3Btn" xml:space="preserve">
+    <value>Rule 3</value>
+  </data>
+  <data name="Rule3Label" xml:space="preserve">
+    <value>Replace "III" with "U"</value>
+  </data>
+  <data name="Rule4Btn" xml:space="preserve">
+    <value>Rule 4</value>
+  </data>
+  <data name="Rule4Label" xml:space="preserve">
+    <value>Delete an occurance of "UU"</value>
+  </data>
+  <data name="BtnCancelLabel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="BtnNextLabel" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="BtnOKLabel" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="BtnPrevLabel" xml:space="preserve">
+    <value>Prev</value>
+  </data>
+  <data name="CurrStringText" xml:space="preserve">
+    <value>Current String:</value>
+  </data>
+  <data name="GoalStringText" xml:space="preserve">
+    <value>Goal String:</value>
+  </data>
+  <data name="HistoryText" xml:space="preserve">
+    <value>History:</value>
+  </data>
 </root>

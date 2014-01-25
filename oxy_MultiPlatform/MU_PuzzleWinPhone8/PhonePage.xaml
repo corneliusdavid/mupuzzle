@@ -96,7 +96,8 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="5,17,0,8">
-            <TextBlock Text="MU Puzzle" Style="{StaticResource PhoneTextTitle1Style}" Margin="12,0"/>
+            <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.ApplicationTitle}" 
+                       Style="{StaticResource PhoneTextTitle1Style}" Margin="12,0"/>
             
             <Grid HorizontalAlignment="Center" Visibility="Collapsed" x:Name="SelectGrid" >
                 <Grid.ColumnDefinitions>
@@ -106,17 +107,17 @@
                     <ColumnDefinition Width="100"/>
                 </Grid.ColumnDefinitions>
 
-                <Button x:Name="btnPrev"   Content="Prev"   Style="{StaticResource ResourceKey=SelBtn}" Visibility="{Binding ElementName=SelectGrid, Path=Visibility}" Grid.Column="0" Click="btnPrev_Click" />
-                <Button x:Name="btnOK"     Content="OK"     Style="{StaticResource ResourceKey=SelBtn}" Visibility="{Binding ElementName=SelectGrid, Path=Visibility}" Grid.Column="1" Click="btnOK_Click" />
-                <Button x:Name="btnCancel" Content="Cancel" Style="{StaticResource ResourceKey=SelBtn}" Visibility="{Binding ElementName=SelectGrid, Path=Visibility}" Grid.Column="2" Click="btnCancel_Click" />
-                <Button x:Name="btnNext"   Content="Next"   Style="{StaticResource ResourceKey=SelBtn}" Visibility="{Binding ElementName=SelectGrid, Path=Visibility}" Grid.Column="3" Click="btnNext_Click" />
+                <Button x:Name="btnPrev"   Content="{Binding  Source={StaticResource LocalizedStrings}, Path=LocalizedResources.BtnPrevLabel}"   Style="{StaticResource ResourceKey=SelBtn}" Visibility="{Binding ElementName=SelectGrid, Path=Visibility}" Grid.Column="0" Click="btnPrev_Click" />
+                <Button x:Name="btnOK"     Content="{Binding  Source={StaticResource LocalizedStrings}, Path=LocalizedResources.BtnOKLabel}"     Style="{StaticResource ResourceKey=SelBtn}" Visibility="{Binding ElementName=SelectGrid, Path=Visibility}" Grid.Column="1" Click="btnOK_Click" />
+                <Button x:Name="btnCancel" Content="{Binding  Source={StaticResource LocalizedStrings}, Path=LocalizedResources.BtnCancelLabel}" Style="{StaticResource ResourceKey=SelBtn}" Visibility="{Binding ElementName=SelectGrid, Path=Visibility}" Grid.Column="2" Click="btnCancel_Click" />
+                <Button x:Name="btnNext"   Content="{Binding  Source={StaticResource LocalizedStrings}, Path=LocalizedResources.BtnNextLabel}"   Style="{StaticResource ResourceKey=SelBtn}" Visibility="{Binding ElementName=SelectGrid, Path=Visibility}" Grid.Column="3" Click="btnNext_Click" />
             </Grid>
             <TextBlock x:Name="lblSelect" Text="Select:" Visibility="{Binding ElementName=SelectGrid, Path=Visibility}" FontStyle="Italic" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="2" Foreground="Gold"/>
 
-            <TextBlock                      Text="Current String:"               Style="{StaticResource BigString}"  />
+            <TextBlock                      Text="{Binding  Source={StaticResource LocalizedStrings}, Path=LocalizedResources.CurrStringText}"               Style="{StaticResource BigString}"  />
             <TextBlock x:Name="lblTmpMuStr" Text="{Binding Path=SelectorString}" Style="{StaticResource CodeText}" Margin="21,5,21,0" Visibility="{Binding ElementName=SelectGrid, Path=Visibility}" />
             <TextBlock x:Name="lblMuStr"    Text="{Binding Path=MuString}"       Style="{StaticResource CodeText}" Margin="42,5,21,0" Height="60" Foreground="Gold" TextWrapping="Wrap" TextTrimming="WordEllipsis" />
-            <TextBlock                      Text="Goal String:"                  Style="{StaticResource BigString}"  />
+            <TextBlock                      Text="{Binding  Source={StaticResource LocalizedStrings}, Path=LocalizedResources.GoalStringText}"                  Style="{StaticResource BigString}"  />
             <TextBlock                      Text="MU"                            Style="{StaticResource CodeText}" Margin="42,0,0,0"  HorizontalAlignment="Left" Foreground="Gold"/>
 
             <Grid HorizontalAlignment="Center" Margin="0,10,0,5" x:Name="grdMainButtons">
@@ -131,19 +132,19 @@
                     <RowDefinition Height="65" />
                 </Grid.RowDefinitions>
 
-                <TextBlock x:Name="lblRule1" Text="Add &quot;U&quot; if last letter is &quot;I&quot;" Style="{StaticResource ResourceKey=RuleLbl}" Grid.Column="1" Grid.Row="0"/>
-                <TextBlock x:Name="lblRule2" Text="Add everything after &quot;M&quot; to the end" Style="{StaticResource ResourceKey=RuleLbl}" Grid.Column="1"  Grid.Row="1" />
-                <TextBlock x:Name="lblRule3" Text="Replace &quot;III&quot; with &quot;U&quot;" Style="{StaticResource ResourceKey=RuleLbl}" Grid.Column="1"  Grid.Row="2" />
-                <TextBlock x:Name="lblRule4" Text="Delete an occurance of &quot;UU&quot;" Style="{StaticResource ResourceKey=RuleLbl}" Grid.Column="1" Grid.Row="3" />
+                <TextBlock x:Name="lblRule1" Text="{Binding  Source={StaticResource LocalizedStrings}, Path=LocalizedResources.Rule1Label}" Style="{StaticResource ResourceKey=RuleLbl}" Grid.Column="1" Grid.Row="0"/>
+                <TextBlock x:Name="lblRule2" Text="{Binding  Source={StaticResource LocalizedStrings}, Path=LocalizedResources.Rule2Label}" Style="{StaticResource ResourceKey=RuleLbl}" Grid.Column="1"  Grid.Row="1" />
+                <TextBlock x:Name="lblRule3" Text="{Binding  Source={StaticResource LocalizedStrings}, Path=LocalizedResources.Rule3Label}" Style="{StaticResource ResourceKey=RuleLbl}" Grid.Column="1"  Grid.Row="2" />
+                <TextBlock x:Name="lblRule4" Text="{Binding  Source={StaticResource LocalizedStrings}, Path=LocalizedResources.Rule4Label}" Style="{StaticResource ResourceKey=RuleLbl}" Grid.Column="1" Grid.Row="3" />
 
-                <Button x:Name="btnRule1" Content="Rule 1" Style="{StaticResource ResourceKey=RuleBtn}" Grid.Column="0" Grid.Row="0" Click="btnRule1_Click" />
-                <Button x:Name="btnRule2" Content="Rule 2" Style="{StaticResource ResourceKey=RuleBtn}" Grid.Column="0" Grid.Row="1" Click="btnRule2_Click" />
-                <Button x:Name="btnRule3" Content="Rule 3" Style="{StaticResource ResourceKey=RuleBtn}" Grid.Column="0" Grid.Row="2" Click="btnRule3_Click" />
-                <Button x:Name="btnRule4" Content="Rule 4" Style="{StaticResource ResourceKey=RuleBtn}" Grid.Column="0" Grid.Row="3" Click="btnRule4_Click" />
+                <Button x:Name="btnRule1" Content="{Binding  Source={StaticResource LocalizedStrings}, Path=LocalizedResources.Rule1Btn}" Style="{StaticResource ResourceKey=RuleBtn}" Grid.Column="0" Grid.Row="0" Click="btnRule1_Click" />
+                <Button x:Name="btnRule2" Content="{Binding  Source={StaticResource LocalizedStrings}, Path=LocalizedResources.Rule2Btn}" Style="{StaticResource ResourceKey=RuleBtn}" Grid.Column="0" Grid.Row="1" Click="btnRule2_Click" />
+                <Button x:Name="btnRule3" Content="{Binding  Source={StaticResource LocalizedStrings}, Path=LocalizedResources.Rule3Btn}" Style="{StaticResource ResourceKey=RuleBtn}" Grid.Column="0" Grid.Row="2" Click="btnRule3_Click" />
+                <Button x:Name="btnRule4" Content="{Binding  Source={StaticResource LocalizedStrings}, Path=LocalizedResources.Rule4Btn}" Style="{StaticResource ResourceKey=RuleBtn}" Grid.Column="0" Grid.Row="3" Click="btnRule4_Click" />
             </Grid>
         </StackPanel>
 
-        <TextBlock Text="History:" Style="{StaticResource BigString}" Grid.Row="1"  />
+        <TextBlock Text="{Binding  Source={StaticResource LocalizedStrings}, Path=LocalizedResources.HistoryText}" Style="{StaticResource BigString}" Grid.Row="1"  />
 
         <ListBox x:Name="lbMuStrs" FontFamily="Lucida Console" FontSize="20" 
                  Background="MistyRose" Foreground="Navy" Margin="20,0,20,10" 
