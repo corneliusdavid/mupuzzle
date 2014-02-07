@@ -56,6 +56,13 @@
                 <Setter Property="Margin"     Value="0,5,10,0" />
                 <Setter Property="Foreground" Value="Bisque" />
             </Style>
+            <DataTemplate x:Key="HistoryItem">
+                <TextBlock Text="{Binding}" 
+                               Foreground="DarkSlateBlue" 
+                               FontSize="20" 
+                               FontWeight="Bold" />
+            </DataTemplate>
+            
         </Grid.Resources>
         <Grid.OpacityMask>
             <RadialGradientBrush>
@@ -98,7 +105,7 @@
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="5,17,0,8">
             <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.ApplicationTitle}" 
                        Style="{StaticResource PhoneTextTitle1Style}" Margin="12,0"/>
-            
+
             <Grid HorizontalAlignment="Center" Visibility="Collapsed" x:Name="SelectGrid" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100"/>
@@ -149,7 +156,8 @@
         <ListBox x:Name="lbMuStrs" FontFamily="Lucida Console" FontSize="20" 
                  Background="MistyRose" Foreground="Navy" Margin="20,0,20,10" 
                  VerticalAlignment="Stretch" Grid.Row="2"
-                 MouseEnter="HistoryMouseEnter" />
+                 MouseEnter="HistoryMouseEnter"
+                 SelectionMode="Single" ItemTemplate="{StaticResource HistoryItem}"/>
     </Grid>
 
 </phone:PhoneApplicationPage>
