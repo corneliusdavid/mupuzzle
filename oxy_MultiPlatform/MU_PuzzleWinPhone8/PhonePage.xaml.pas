@@ -281,6 +281,7 @@ end;
 method PhonePage.appBarApplyBtnClick(sender: Object; e: EventArgs);
 begin
   SetNewWorkingString;
+  ApplicationBar.IsVisible := False;
 end;
 
 method PhonePage.appBarCancelBtnClick(sender: Object; e: EventArgs);
