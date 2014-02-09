@@ -86,10 +86,6 @@ begin
   ApplicationBar.Buttons.Add(appBarCancelBtn);
 
   ApplicationBar.IsVisible := False;
-
-  // Create a new menu item with the localized string from AppResources.
-  //var appBarMenuItem: ApplicationBarMenuItem := new ApplicationBarMenuItem(AppResources.AppBarMenuItemText);
-  //ApplicationBar.MenuItems.Add(appBarMenuItem)
 end;
 
 method PhonePage.ActivateSelBtns(TurnOn: Visibility);
@@ -269,7 +265,7 @@ end;
 
 method PhonePage.HistorySelectionChanged(sender: System.Object; e: SelectionChangedEventArgs);
 begin
-  if lbMuStrs.SelectedItem <> nil then
+  if lbMuStrs.SelectedItem <> nil then 
     ApplicationBar.IsVisible := True;
 end;
 
@@ -282,11 +278,13 @@ method PhonePage.appBarApplyBtnClick(sender: Object; e: EventArgs);
 begin
   SetNewWorkingString;
   ApplicationBar.IsVisible := False;
+  lbMuStrs.SelectedIndex := -1;
 end;
 
 method PhonePage.appBarCancelBtnClick(sender: Object; e: EventArgs);
 begin
   ApplicationBar.IsVisible := False;
+  lbMuStrs.SelectedIndex := -1;
 end;
 
 end.
