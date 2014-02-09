@@ -133,6 +133,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\AlignmentGrid.png" />
+    <Content Include="Assets\AppBar\cancel.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Assets\AppBar\check.png">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -159,6 +165,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\" />
+    <Folder Include="Assets\AppBar" />
     <Folder Include="Assets\Tiles\" />
     <Folder Include="Properties\" />
     <Folder Include="Resources\" />

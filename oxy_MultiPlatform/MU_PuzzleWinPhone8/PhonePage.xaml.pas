@@ -74,11 +74,11 @@ begin
   // Set the page's ApplicationBar to a new instance of ApplicationBar.
   ApplicationBar := new ApplicationBar();
 
-  var appBarApplyBtn: ApplicationBarIconButton := new ApplicationBarIconButton(new Uri('/Assets/AppBar/appbar.add.rest.png', UriKind.Relative));
+  var appBarApplyBtn: ApplicationBarIconButton := new ApplicationBarIconButton(new Uri('/Assets/AppBar/check.png', UriKind.Relative));
   appBarApplyBtn.Text := AppResources.AppBarApplyText;
   appBarApplyBtn.Click += appBarApplyBtnClick;
   
-  var appBarCancelBtn: ApplicationBarIconButton := new ApplicationBarIconButton(new Uri('/Assets/AppBar/appbar.add.rest.png', UriKind.Relative));
+  var appBarCancelBtn: ApplicationBarIconButton := new ApplicationBarIconButton(new Uri('/Assets/AppBar/cancel.png', UriKind.Relative));
   appBarCancelBtn.Text := AppResources.AppBarCancelText;
   appBarCancelBtn.Click += appBarCancelBtnClick;
   
