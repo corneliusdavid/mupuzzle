@@ -9,7 +9,7 @@ looking for an excuse to write a program!
 Written in Delphi 1, still compiles in Delphi 2010.
 
 Now ported to:
--- C# using WinForms on Windows Desktop
--- C# using XAML for .NET WPF on Windows Desktop
--- Oxygene using XAML for .NET WPF one Windows Desktop
--- Oxygene using XAML for Windows Phone 8
+* C# using WinForms on Windows Desktop
+* C# using XAML for .NET WPF on Windows Desktop
+* Oxygene using XAML for .NET WPF one Windows Desktop
+* Oxygene using XAML for Windows Phone 8
