@@ -52,3 +52,5 @@ oxy_MultiPlatform/MU_PuzzlePhoneClass/obj/x86/Debug
 oxy_MultiPlatform/MU_PuzzlePhoneClass/Bin/ARM/Debug
 oxy_MultiPlatform/MU_PuzzlePhoneClass/obj/ARM/Debug
 
+oxy_WinPhone/MU_Puzzle_WinPhone/Bin/ARM/Debug/MU_Puzzle_WinPhone_Debug_ARM.xap
+*.xap
