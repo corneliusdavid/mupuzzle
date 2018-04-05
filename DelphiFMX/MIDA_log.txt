@@ -1,0 +1,32 @@
+Mida - Convert VCL Application To FireMonkey for Delphi Embarcadero XE2/XE3/XE4/XE5/XE6/XE7/XE8/Seattle and C++Builder XE2/XE3/XE4/XE5/XE6/XE7/XE8/Seattle
+Official Site http://www.midaconverter.com
+Mida version : 281
+---------------------------------------------------------------------------------------------------------------------------------------------------
+This is a Basic version of Mida ( LiveBindinds - StyleBook - Image - Source Update, Custom components... are not supported )
+
+The Third Party Components ( TMS - JVCL - DevExpress... ) are not supported in this version of Mida.
+Opening from Embarcadero IDE a converted project, with components like TMS,JVCL,personal ... IDE will indicate an error of Class not known.
+
+This is not an error of Mida.
+
+Upgrade your licence to Mida Pro or Studio to obtain a greater number of components supported.
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+Converting...
+
+CONVERSION MODE: VCL TO FIREMONKEY
+IDE OUTPUT: DX10
+CUSTOM CONVERSION: NOT ACTIVE
+
+DFM :
+Converting : C:\Users\dev\Documents\dev\MUPuzzle\Delphi\MAIN.DFM
+     
+PAS LIBRARY :
+DPR :
+CPP :
+H :
+cbProj :
+Others :
+
+Operation Complete
+Time convertion project : 1.31 seconds.

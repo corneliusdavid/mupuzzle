@@ -1,0 +1,285 @@
+object MuPuzzleFrm: TMuPuzzleFrm
+  Left = 201
+  Top = 139
+  BorderIcons = [biSystemMenu, biMinimize]
+  Caption = 'MU Puzzle'
+  ClientHeight = 525
+  ClientWidth = 789
+  Position = ScreenCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop, iPhone, iPad]
+  OnCreate = FormCreate
+  Left = 201
+  Top = 139
+  DesignerMasterStyle = 0
+  object SelectLbl: TLabel
+    AutoSize = True
+    Margins.Left = 2.000000000000000000
+    Margins.Top = 2.000000000000000000
+    Margins.Right = 2.000000000000000000
+    Position.X = 178.000000000000000000
+    Position.Y = 133.000000000000000000
+    Size.Width = 36.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.WordWrap = False
+    Text = 'Select'
+    Visible = False
+  end
+  object CurrStrLbl: TLabel
+    AutoSize = True
+    StyledSettings = [Family, Size, FontColor]
+    Margins.Left = 2.000000000000000000
+    Margins.Top = 2.000000000000000000
+    Margins.Right = 2.000000000000000000
+    Position.X = 10.000000000000000000
+    Position.Y = 19.000000000000000000
+    Size.Width = 87.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Style = [fsBold]
+    TextSettings.WordWrap = False
+    Text = 'Current String:'
+  end
+  object lblRule1: TLabel
+    AutoSize = True
+    Margins.Left = 2.000000000000000000
+    Margins.Top = 2.000000000000000000
+    Margins.Right = 2.000000000000000000
+    Position.X = 119.000000000000000000
+    Position.Y = 192.000000000000000000
+    Size.Width = 145.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.WordWrap = False
+    Text = 'Add a "U" if last letter is "I"'
+  end
+  object lblRule2: TLabel
+    AutoSize = True
+    Margins.Left = 2.000000000000000000
+    Margins.Top = 2.000000000000000000
+    Margins.Right = 2.000000000000000000
+    Position.X = 61.000000000000000000
+    Position.Y = 216.000000000000000000
+    Size.Width = 205.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.WordWrap = False
+    Text = 'Add everything after the M to the end'
+  end
+  object lblRule3: TLabel
+    AutoSize = True
+    Margins.Left = 2.000000000000000000
+    Margins.Top = 2.000000000000000000
+    Margins.Right = 2.000000000000000000
+    Position.X = 489.000000000000000000
+    Position.Y = 192.000000000000000000
+    Size.Width = 113.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.WordWrap = False
+    Text = 'Replace "III" with "U"'
+  end
+  object lblRule4: TLabel
+    AutoSize = True
+    Margins.Left = 2.000000000000000000
+    Margins.Top = 2.000000000000000000
+    Margins.Right = 2.000000000000000000
+    Position.X = 489.000000000000000000
+    Position.Y = 216.000000000000000000
+    Size.Width = 154.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.WordWrap = False
+    Text = 'Delete an occurance of "UU"'
+  end
+  object GoalLbl: TLabel
+    AutoSize = True
+    StyledSettings = [Family, Size, FontColor]
+    Margins.Left = 2.000000000000000000
+    Margins.Top = 2.000000000000000000
+    Margins.Right = 2.000000000000000000
+    Position.X = 10.000000000000000000
+    Position.Y = 133.000000000000000000
+    Size.Width = 70.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Style = [fsBold]
+    TextSettings.WordWrap = False
+    Text = 'Goal String:'
+  end
+  object GoalStrLbl: TLabel
+    AutoSize = True
+    Margins.Left = 2.000000000000000000
+    Margins.Top = 2.000000000000000000
+    Margins.Right = 2.000000000000000000
+    Position.X = 27.000000000000000000
+    Position.Y = 152.000000000000000000
+    Size.Width = 23.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Style = [fsBold]
+    TextSettings.VertAlign = Leading
+    TextSettings.WordWrap = False
+    Text = 'MU'
+  end
+  object MuStr: TLabel
+    Margins.Left = 2.000000000000000000
+    Margins.Top = 2.000000000000000000
+    Margins.Right = 2.000000000000000000
+    Position.X = 24.000000000000000000
+    Position.Y = 42.000000000000000000
+    Size.Width = 753.000000000000000000
+    Size.Height = 83.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.VertAlign = Leading
+    Text = 'MIUIUI'
+  end
+  object MyMuStrListBox: TListBox
+    Align = Bottom
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    Margins.Left = 2.000000000000000000
+    Margins.Top = 2.000000000000000000
+    Margins.Right = 2.000000000000000000
+    Margins.Bottom = 2.000000000000000000
+    Position.X = 2.000000000000000000
+    Position.Y = 246.000000000000000000
+    Size.Width = 785.000000000000000000
+    Size.Height = 277.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    OnDblClick = MyMuStrListBoxDblClick
+    DisableFocusEffect = True
+    ItemHeight = 19.000000000000000000
+    DefaultItemStyles.ItemStyle = ''
+    DefaultItemStyles.GroupHeaderStyle = ''
+    DefaultItemStyles.GroupFooterStyle = ''
+    Viewport.Width = 781.000000000000000000
+    Viewport.Height = 273.000000000000000000
+  end
+  object PrevBtn: TButton
+    Margins.Left = 2.000000000000000000
+    Margins.Top = 2.000000000000000000
+    Margins.Right = 2.000000000000000000
+    Margins.Bottom = 2.000000000000000000
+    Position.X = 228.000000000000000000
+    Position.Y = 10.000000000000000000
+    Size.Width = 68.000000000000000000
+    Size.Height = 29.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Text = 'Prev'
+    TextSettings.WordWrap = True
+    Visible = False
+    OnClick = PrevBtnClick
+  end
+  object OkBtn: TButton
+    Default = True
+    ModalResult = 1
+    Margins.Left = 2.000000000000000000
+    Margins.Top = 2.000000000000000000
+    Margins.Right = 2.000000000000000000
+    Margins.Bottom = 2.000000000000000000
+    Position.X = 304.000000000000000000
+    Position.Y = 10.000000000000000000
+    Size.Width = 68.000000000000000000
+    Size.Height = 29.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Text = 'Ok'
+    TextSettings.WordWrap = True
+    Visible = False
+    OnClick = OkBtnClick
+  end
+  object NextBtn: TButton
+    Margins.Left = 2.000000000000000000
+    Margins.Top = 2.000000000000000000
+    Margins.Right = 2.000000000000000000
+    Margins.Bottom = 2.000000000000000000
+    Position.X = 452.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 68.000000000000000000
+    Size.Height = 30.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Text = 'Next'
+    TextSettings.WordWrap = True
+    Visible = False
+    OnClick = NextBtnClick
+  end
+  object CancelBtn: TButton
+    Cancel = True
+    ModalResult = 2
+    Margins.Left = 2.000000000000000000
+    Margins.Top = 2.000000000000000000
+    Margins.Right = 2.000000000000000000
+    Margins.Bottom = 2.000000000000000000
+    Position.X = 380.000000000000000000
+    Position.Y = 10.000000000000000000
+    Size.Width = 68.000000000000000000
+    Size.Height = 29.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    Text = 'Cancel'
+    TextSettings.WordWrap = True
+    Visible = False
+    OnClick = CancelBtnClick
+  end
+  object btnRule1: TButton
+    Margins.Left = 2.000000000000000000
+    Margins.Top = 2.000000000000000000
+    Margins.Right = 2.000000000000000000
+    Margins.Bottom = 2.000000000000000000
+    Position.X = 286.000000000000000000
+    Position.Y = 188.000000000000000000
+    Size.Width = 83.000000000000000000
+    Size.Height = 27.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    Text = 'Rule 1'
+    OnClick = btnRule1Click
+  end
+  object btnRule2: TButton
+    Margins.Left = 2.000000000000000000
+    Margins.Top = 2.000000000000000000
+    Margins.Right = 2.000000000000000000
+    Margins.Bottom = 2.000000000000000000
+    Position.X = 286.000000000000000000
+    Position.Y = 216.000000000000000000
+    Size.Width = 83.000000000000000000
+    Size.Height = 27.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    Text = 'Rule 2'
+    OnClick = btnRule2Click
+  end
+  object btnRule3: TButton
+    Margins.Left = 2.000000000000000000
+    Margins.Top = 2.000000000000000000
+    Margins.Right = 2.000000000000000000
+    Margins.Bottom = 2.000000000000000000
+    Position.X = 382.000000000000000000
+    Position.Y = 188.000000000000000000
+    Size.Width = 87.000000000000000000
+    Size.Height = 27.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 7
+    Text = 'Rule 3'
+    OnClick = btnRule3Click
+  end
+  object btnRule4: TButton
+    Margins.Left = 2.000000000000000000
+    Margins.Top = 2.000000000000000000
+    Margins.Right = 2.000000000000000000
+    Margins.Bottom = 2.000000000000000000
+    Position.X = 382.000000000000000000
+    Position.Y = 216.000000000000000000
+    Size.Width = 87.000000000000000000
+    Size.Height = 27.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 8
+    Text = 'Rule 4'
+    OnClick = btnRule4Click
+  end
+end
