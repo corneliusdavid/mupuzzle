@@ -6,7 +6,7 @@ the MU Puzzle presented there. It deals with manipulating sequences of "M"s and 
 rules to try to come up with a specific pattern of characters. This is a prime example of a programmer
 looking for an excuse to write a program!
 
-Written in Delphi 1, still compiles in Delphi 2010.
+Written in Delphi 1, still compiles in Delphi 10.2 Tokyo.
 
 Now ported to:
 * C# using WinForms on Windows Desktop
